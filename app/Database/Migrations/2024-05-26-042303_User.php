@@ -8,7 +8,7 @@ class User extends Migration
 {
     public function up()
     {
-        // Membuat kolom/field untuk tabel news
+        // Membuat kolom/field untuk tabel user
 		$this->forge->addField([
 			'id_user'          => [
 				'type'           => 'INT',
@@ -32,7 +32,7 @@ class User extends Migration
 		// Membuat primary key
 		$this->forge->addKey('id_user', TRUE);
 
-		// Membuat tabel news
+		// Membuat tabel user
 		$this->forge->createTable('user', TRUE);
     }
 
