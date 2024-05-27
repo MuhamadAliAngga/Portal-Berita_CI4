@@ -28,7 +28,7 @@ cd Portal-Berita_CI4/
 composer install
 ```
 
-Ubah nama file `env` menjadi `.env` kemudian sesuaikan bagian database dan environment
+Ubah nama file `env example` menjadi `.env` kemudian sesuaikan bagian database dan environment
 
 ```php
 #--------------------------------------------------------------------
