@@ -14,7 +14,7 @@
 </head>
 
 <body class="h-100">
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -29,10 +29,6 @@
         Preloader end
     ********************-->
 
-    
-
-
-
     <div class="login-form-bg h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100">
@@ -42,17 +38,17 @@
                             <div class="card-body pt-5">
                                 <a class="text-center"> <h4>Login Admin Portal Berita</h4></a>
                                 
-                                <form class="mt-5 mb-5 login-input">
+                                <form class="mt-5 mb-5 login-input" method="post" action="/login/prosesLogin">
                                 <?php
-                                    /*if (session()->getFlashdata('pesan')) {
-                                        echo '<div class="alert alert-danger">Username atau password salah!!</div>'
-                                    }*/
+                                    if (session()->getFlashdata('pesan')) {
+                                        echo session()->getFlashdata('pesan');
+                                    }
                                 ?>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Username">
+                                        <input type="text" name="username" class="form-control" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Masuk</button>
                                 </form>
