@@ -25,7 +25,7 @@
         <label for="link_portofolio">Link Portofolio:</label>
         <input type="url" id="link_portofolio" name="link_portofolio" class="form-control" required>
     </div>
-    <button type="submit" class="btn btn-primary">Tambahkan Penulis</button>
+    <button type="submit" class="btn btn-primary">Tambah</button>
 </form>
 
 <!-- Daftar Penulis -->
