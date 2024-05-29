@@ -12,14 +12,16 @@ class User extends Migration
 		$this->forge->addField([
 			'id_user'          => [
 				'type'           => 'INT',
-				'unsigned'       => true,
 				'auto_increment' => true
 			],
-			'username'       => [
+			'id_profil'          => [
+				'type'           => 'INT'
+			],
+			'username'    		 => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
-			'password'      => [
+			'password'     	 	 => [
 				'type'           => 'VARCHAR',
 				'constraint'     => 50
 			],

@@ -4,26 +4,27 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Penulis extends Migration
+class Profil extends Migration
 {
     public function up()
     {
-        // Membuat kolom/field untuk tabel penulis
+        // Membuat kolom/field untuk tabel profil
 		$this->forge->addField([
-			'id_penulis'         => [
+			'id_profil'         => [
 				'type'           => 'INT',
 				'auto_increment' => true
 			],
-			'nama_penulis'       => [
+			'nama_lengkap'       => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
 			'biografi'      => [
 				'type'           => 'TEXT',
 			],
-			'foto' => [
+			'foto_profil'     			 => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '255'
+				'constraint'     => 255,
+				'deafult'     	 => 'deafult.jpg'
 			],
 			'link_portofolio' => [
 				'type'           => 'VARCHAR',
@@ -32,10 +33,10 @@ class Penulis extends Migration
 		]);
 
 		// Membuat primary key
-		$this->forge->addKey('id_penulis', TRUE);
+		$this->forge->addKey('id_profil', TRUE);
 
-		// Membuat tabel penulis
-		$this->forge->createTable('penulis', TRUE);
+		// Membuat tabel profil
+		$this->forge->createTable('profil', TRUE);
     }
 
     public function down()

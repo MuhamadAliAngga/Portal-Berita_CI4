@@ -14,12 +14,17 @@ class Artikel extends Migration
 				'type'           => 'INT',
 				'auto_increment' => true
 			],
-			'id_penulis'         => [
+			'id_profil'          => [
 				'type'           => 'INT'
 			],
-			'judul'      => [
+			'judul'     		 => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
+			],
+			'thumbnail'     	 => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255',
+				'deafult'	 	 => 'deafult.jpg'
 			],
 			'isi' => [
 				'type'           => 'TEXT'
