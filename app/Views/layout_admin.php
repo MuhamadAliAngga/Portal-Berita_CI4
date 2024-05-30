@@ -96,7 +96,7 @@
                                         
                                         
                                         
-                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,11 +132,13 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel</span>
                         </a>
                     </li>
+                    <?php if(session()->akses == 1) : ?>
                     <li>
                         <a href="/user" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">User</span>
                         </a>
                     </li>
+                    <?php endif ?>
                     
                 </ul>
             </div>
