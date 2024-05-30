@@ -18,7 +18,8 @@ $routes->get('/artikel/delete/(:segment)', 'ArtikelController::delete/$1');
 
 //Routes Aurthentication
 $routes->get('/login', 'Auth::index');
-$routes->post('/login/prosesLogin', 'Auth::prosesLogin');
+$routes->get('/logout', 'Auth::logout');
+$routes->post('/login/proses', 'Auth::prosesLogin');
 
 //routes dashboard
 $routes->get('/', 'Home::index');

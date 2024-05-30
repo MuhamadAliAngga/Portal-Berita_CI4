@@ -66,7 +66,16 @@
                     </div>
                 </div>
                 <div class="header-left">
-                   
+                    <div class="input-group icons">
+                        <?php 
+                            if (session()->getFlashdata('berhasil')) {
+                                echo '<div class="alert alert-primary alert-dismissible fade show">';
+                                echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                                echo session()->getFlashdata('berhasil').' <strong>'.session()->get('username').'</strong></div>';
+                            }
+                        ?>
+                    </div>
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
@@ -87,7 +96,7 @@
                                         
                                         
                                         
-                                        <li><a href="/login"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
