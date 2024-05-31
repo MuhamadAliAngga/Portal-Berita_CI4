@@ -14,9 +14,6 @@ class User extends Migration
 				'type'           => 'INT',
 				'auto_increment' => true
 			],
-			'id_profil'          => [
-				'type'           => 'INT'
-			],
 			'username'    		 => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'

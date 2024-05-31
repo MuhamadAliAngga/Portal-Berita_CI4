@@ -14,6 +14,9 @@ class Profil extends Migration
 				'type'           => 'INT',
 				'auto_increment' => true
 			],
+			'id_user'       => [
+				'type'           => 'INT'
+			],
 			'nama_lengkap'       => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
@@ -41,6 +44,6 @@ class Profil extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('penulis');
+        $this->forge->dropTable('profil');
     }
 }
