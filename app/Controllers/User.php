@@ -28,6 +28,7 @@ class User extends BaseController
             'akses' => $this->request->getVar('akses'),
         ];
 
-        
+        $this->user->insert($data);
+        return redirect()->to(site_url('/user'));
     }
 }

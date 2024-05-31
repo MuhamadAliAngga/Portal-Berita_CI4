@@ -34,3 +34,4 @@ $routes->delete('penulis/(:segment)', 'Penulis::delete/$1');
 
 //routes user
 $routes->get('/user', 'User::index');
+$routes->post('/user/insert', 'User::insert');

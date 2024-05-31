@@ -40,8 +40,8 @@
                                                 <td><?= $user['password'] ?></td>
                                                 <td class="text-center"><?= $user['akses'] ?></td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn mb-1 btn-warning btn-sm"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn mb-1 btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button type="button" data-toggle="modal" data-target="#update<?= $user['id_user'] ?>" class="btn mb-1 btn-warning btn-sm"><i class="fa fa-edit"></i></button>
+                                                    <button type="button" data-toggle="modal" data-target="#delete<?= $user['id_user'] ?>" class="btn mb-1 btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -62,14 +62,14 @@
                                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="/as" method="post">
+                                                <form action="/user/insert" method="post">
                                                 <div class="modal-body">
                                                     
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control input-rounded" placeholder="Username">
+                                                            <input type="text" name="username" class="form-control input-rounded" placeholder="Username">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control input-rounded" placeholder="Password">
+                                                            <input type="text" name="password" class="form-control input-rounded" placeholder="Password">
                                                         </div>
                                                         <div class="form-group">
                                                             <select name="akses" id="akses" class="form-control input-rounded">
@@ -88,4 +88,65 @@
                                             </div>
                                         </div>
                                     </div>
+<!-- Modal edit -->
+<?php foreach($data as $row) { ?>
+<div class="modal fade" id="update<?= $row['id_user'] ?>">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Tambah User</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="/user/insert" method="post">
+                                                <div class="modal-body">
+                                                    
+                                                        <div class="form-group">
+                                                            <input type="text" name="username" class="form-control input-rounded" value="<?= $row['username'] ?>" placeholder="Username">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" name="password" class="form-control input-rounded" value="<?= $row['password'] ?>" placeholder="Password" readonly>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select name="akses" id="akses" class="form-control input-rounded">
+                                                                <option>Pilih</option>
+                                                                <option value="1">Admin</option>
+                                                                <option value="2">Penulis</option>
+                                                            </select>
+                                                        </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Ubah</button>
+                                                </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+<?php } ?>
+<!-- Modal hapus -->
+<?php foreach($data as $row) { ?>
+<div class="modal fade" id="delete<?= $row['id_user'] ?>">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Tambah User</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                                    </button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Hapus</button>
+                                                </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+<?php } ?>
 <?= $this->endSection() ?>
