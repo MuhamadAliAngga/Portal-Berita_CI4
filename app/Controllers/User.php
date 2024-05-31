@@ -8,10 +8,13 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class User extends BaseController
 {
-    function __construct()
+    protected $user;
+
+    public function __construct()
     {
-        $this->user = new UserModel;    
+        $this->user = new UserModel();
     }
+
     public function index()
     {
         $data = [
@@ -24,44 +27,53 @@ class User extends BaseController
 
     public function insert()
     {
+        // Validasi input
+        if (!$this->validate([
+            'username' => 'required|min_length[3]|max_length[50]',
+            'password' => 'required|min_length[6]',
+            'akses' => 'required|in_list[1,2]' // Assuming '1' for Admin and '2' for Penulis
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Hash password sebelum menyimpan
+        $hashedPassword = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+
         $data = [
             'username' => $this->request->getVar('username'),
-            'password' => md5($this->request->getVar('password')),
+            'password' => $hashedPassword,
             'akses' => $this->request->getVar('akses'),
         ];
 
-        $sess = [
-            'berhasil' => 'Data user berhasil ditambah!!'
-        ];
-
         $this->user->insert($data);
-        session()->setFlashdata($sess);
+        session()->setFlashdata('berhasil', 'Data user berhasil ditambah!!');
         return redirect()->to(site_url('/user'));
     }
 
     public function update($id)
     {
+        // Validasi input
+        if (!$this->validate([
+            'username' => 'required|min_length[3]|max_length[50]',
+            'akses' => 'required|in_list[1,2]' // Assuming '1' for Admin and '2' for Penulis
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
         $data = [
             'username' => $this->request->getPost('username'),
             'akses' => $this->request->getPost('akses')
         ];
 
-         $sess = [
-            'berhasil' => 'Data user berhasil diubah!!'
-        ];
-
         $this->user->update($id, $data);
-        session()->setFlashdata($sess);
+        session()->setFlashdata('berhasil', 'Data user berhasil diubah!!');
         return redirect()->to('/user');
     }
 
     public function delete($id)
     {
-         $sess = [
-            'berhasil' => 'Data user berhasil dihapus!!'
-        ];
-        $this->user->where('id_user', $id)->delete($id);
-        session()->setFlashdata($sess);
+        $this->user->delete($id);
+        session()->setFlashdata('berhasil', 'Data user berhasil dihapus!!');
         return redirect()->to('/user');
     }
 }
