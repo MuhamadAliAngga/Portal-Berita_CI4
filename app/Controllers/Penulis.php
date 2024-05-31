@@ -48,7 +48,7 @@ class Penulis extends BaseController
         $data = [
             'nama_penulis' => $this->request->getVar('nama_penulis'),
             'biografi' => $this->request->getVar('biografi'),
-            'foto' => 'public/image/' . $namaFoto,
+            'foto' => $namaFoto,
             'link_portofolio' => $this->request->getVar('link_portofolio')
         ];
 
@@ -82,7 +82,7 @@ class Penulis extends BaseController
             $namaFoto = $foto->getRandomName();
             // Pindahkan file foto baru ke folder public/image
             $foto->move(ROOTPATH . 'public/image', $namaFoto);
-            $fotoPath = 'public/image/' . $namaFoto;
+            $fotoPath = $namaFoto;
         } else {
             // Jika tidak ada foto baru diunggah, gunakan foto yang sudah ada
             $fotoPath = $penulis['foto'];

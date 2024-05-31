@@ -101,6 +101,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
+                            <label for="detailId_Penulis<?= $penulis['id_penulis'] ?>">ID Penulis</label>
+                            <input type="text" class="form-control" id="detailNamaPenulis<?= $penulis['id_penulis'] ?>" value="<?= $penulis['id_penulis'] ?>" readonly>
+                        </div>
+                        <div class="form-group">
                             <label for="detailNamaPenulis<?= $penulis['id_penulis'] ?>">Nama Penulis:</label>
                             <input type="text" class="form-control" id="detailNamaPenulis<?= $penulis['id_penulis'] ?>" value="<?= $penulis['nama_penulis'] ?>" readonly>
                         </div>
@@ -111,15 +115,14 @@
                         <div class="form-group">
                             <label for="detailFoto<?= $penulis['id_penulis'] ?>">Foto:</label><br>
                             <?php
-                            $imagePath = 'public/image/' . $penulis['foto'];
+                            $imagePath = FCPATH . 'public/image/' . $penulis['foto'];
                             if (file_exists($imagePath)) {
-                                echo '<img src="' . base_url($imagePath) . '" alt="Foto Penulis" style="max-width: 100px;">';
+                                echo '<img src="' . base_url('public/image/' . $penulis['foto']) . '" alt="Foto Penulis" style="max-width: 100px;">';
                             } else {
                                 echo 'Gambar tidak ditemukan';
                             }
                             ?>
                         </div>
-
                         <div class="form-group">
                             <label for="detailLinkPortofolio<?= $penulis['id_penulis'] ?>">Link Portofolio:</label>
                             <input type="text" class="form-control" id="detailLinkPortofolio<?= $penulis['id_penulis'] ?>" value="<?= $penulis['link_portofolio'] ?>" readonly>
