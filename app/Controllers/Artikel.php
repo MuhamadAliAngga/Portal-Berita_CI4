@@ -2,90 +2,97 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use App\Models\ArtikelModel;
-use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\HTTP\ResponseInterface;
 
-class Artikel extends ResourceController
+class Artikel extends BaseController
 {
-    protected $modelName = 'App\Models\ArtikelModel';
-    protected $format    = 'json';
+    protected $artikel;
+
+    public function __construct()
+    {
+        $this->artikel = new ArtikelModel();
+    }
 
     public function index()
     {
-        $model = new ArtikelModel();
         $data = [
-            'articles' => $model->findAll(),
+            'data' => $this->artikel->findAll(),
             'title' => 'Admin',
             'subtitle' => 'Artikel'
         ];
-
         return view('artikel_view', $data);
     }
 
-    public function show($id = null)
+    public function insert()
     {
-        $data = $this->model->find($id);
-        if ($data) {
-            return $this->respond($data);
-        } else {
-            return $this->failNotFound('Artikel tidak ditemukan');
-        }
-    }
-
-    public function create()
-    {
-        $input = $this->request->getPost();
-
-        // Validasi input jika diperlukan
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'id_penulis' => 'required|integer',
-            'judul' => 'required|max_length[255]',
+        // Validasi input
+        if (!$this->validate([
+            'judul' => 'required|min_length[3]|max_length[255]',
             'isi' => 'required',
-            'tanggal_dibuat' => 'required|valid_date[Y-m-d]',
-        ]);
-
-        if (!$validation->run($input)) {
-            return $this->fail($validation->getErrors());
-        }
-
-        if ($this->model->createArtikel($input)) {
-            return $this->respondCreated($input, 'Artikel berhasil dibuat');
-        } else {
-            return $this->fail('Gagal membuat artikel');
-        }
-    }
-
-    public function update($id = null)
-    {
-        $input = $this->request->getRawInput();
-
-        // Validasi input jika diperlukan
-        $validation = \Config\Services::validation();
-        $validation->setRules([
             'id_penulis' => 'required|integer',
-            'judul' => 'required|max_length[255]',
-            'isi' => 'required',
-            'tanggal_dibuat' => 'required|valid_date[Y-m-d]',
-        ]);
-
-        if (!$validation->run($input)) {
-            return $this->fail($validation->getErrors());
+            'tanggal_dibuat' => 'required|valid_date[Y-m-d]'
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        if ($this->model->updateArtikel($id, $input)) {
-            return $this->respondUpdated($input, 'Artikel berhasil diperbarui');
-        } else {
-            return $this->fail('Gagal memperbarui artikel');
-        }
+        $data = [
+            'judul' => $this->request->getVar('judul'),
+            'isi' => $this->request->getVar('isi'),
+            'id_penulis' => $this->request->getVar('id_penulis'),
+            'tanggal_dibuat' => $this->request->getVar('tanggal_dibuat')
+        ];
+
+        $this->artikel->insert($data);
+        session()->setFlashdata('berhasil', 'Data artikel berhasil ditambah!!');
+        return redirect()->to(site_url('/artikel'));
     }
 
-    public function delete($id = null)
+    public function update($id)
     {
-        if ($this->model->deleteArtikel($id)) {
-            return $this->respondDeleted('Artikel berhasil dihapus');
-        } else {
-            return $this->failNotFound('Artikel tidak ditemukan');
+        // Validasi input
+        if (!$this->validate([
+            'judul' => 'required|min_length[3]|max_length[255]',
+            'isi' => 'required',
+            'id_penulis' => 'required|integer',
+            'tanggal_dibuat' => 'required|valid_date[Y-m-d]'
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
+
+        $data = [
+            'judul' => $this->request->getPost('judul'),
+            'isi' => $this->request->getPost('isi'),
+            'id_penulis' => $this->request->getPost('id_penulis'),
+            'tanggal_dibuat' => $this->request->getPost('tanggal_dibuat')
+        ];
+
+        $this->artikel->update($id, $data);
+        session()->setFlashdata('berhasil', 'Data artikel berhasil diubah!!');
+        return redirect()->to('/artikel');
+    }
+
+    public function delete($id)
+    {
+        $this->artikel->delete($id);
+        session()->setFlashdata('berhasil', 'Data artikel berhasil dihapus!!');
+        return redirect()->to('/artikel');
+    }
+
+    public function detail($id)
+    {
+        $artikel = $this->artikel->find($id);
+        if (!$artikel) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Artikel dengan ID ' . $id . ' tidak ditemukan.');
+        }
+
+        $data = [
+            'artikel' => $artikel,
+            'title' => 'Detail Artikel',
+            'subtitle' => 'Detail Artikel'
+        ];
+
+        return view('artikel_detail_view', $data);
     }
 }
