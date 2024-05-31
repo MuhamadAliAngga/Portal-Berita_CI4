@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Portal Berita</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('template/theme/') ?>images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -30,7 +29,7 @@
         Preloader end
     ********************-->
 
-    
+
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -57,15 +56,16 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header">
             <div class="header-content clearfix">
-                
+
                 <div class="nav-control">
                     <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
                     </div>
                 </div>
                 <div class="header-left">
+
                     <div class="input-group icons">
                         <?php 
                             if (session()->getFlashdata('berhasil')) {
@@ -76,14 +76,15 @@
                             }
                         ?>
                     </div>
+
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
-                        
-                        
-                        
+
+
+
                         <li class="icons dropdown">
-                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                            <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class="activity active"></span>
                                 <img src="<?= base_url('template/theme/') ?>images/user/1.png" height="40" width="40" alt="">
                             </div>
@@ -97,6 +98,7 @@
                                         
                                         
                                         <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -112,12 +114,12 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="nk-sidebar">           
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                <li class="nav-label">Dashboard</li>
+                    <li class="nav-label">Dashboard</li>
 
-                <li>
+                    <li>
                         <a href="/" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
@@ -139,7 +141,6 @@
                         </a>
                     </li>
                     <?php endif ?>
-                    
                 </ul>
             </div>
         </div>
@@ -170,8 +171,8 @@
         <!--**********************************
             Content body end
         ***********************************-->
-        
-        
+
+
         <!--**********************************
             Footer start
         ***********************************-->
