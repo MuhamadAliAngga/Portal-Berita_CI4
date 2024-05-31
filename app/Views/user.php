@@ -1,14 +1,19 @@
 <?= $this->extend('layout_admin') ?>
 <?= $this->section('content') ?>
 <!-- isi konten -->
-<h1>Halaman User</h1>
 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Table</h4>
-                                <button type="button" class="btn mb-1 btn-info" data-toggle="modal" data-target="#tambah">Tambah <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
-                                    </button>
+                                <h4 class="card-title">Data User</h4>
+                                <button type="button" class="pull-right btn mb-2 btn-info" data-toggle="modal" data-target="#tambah">Tambah <span class="btn-icon-right"><i class="fa fa-plus"></i></span></button>
+                                <?php 
+                                    if (session()->getFlashdata('berhasil')) {
+                                        echo '<div class="alert alert-success alert-dismissible fade show">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                        </button> <strong>'.session()->getFlashdata('berhasil').'</strong></div>';
+                                    }
+                                ?>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
@@ -38,7 +43,7 @@
                                                 <td class="text-center"><?= $no++ ?></td>
                                                 <td><?= $user['username'] ?></td>
                                                 <td><?= $user['password'] ?></td>
-                                                <td class="text-center"><?= $user['akses'] ?></td>
+                                                <td class="text-center"><?= $user['akses'] == 1 ? '<span class="badge badge-pill badge-primary">Admin</span>' : '<span class="badge badge-pill badge-warning">Penulis</span>' ?></td>
                                                 <td class="text-center">
                                                     <button type="button" data-toggle="modal" data-target="#update<?= $user['id_user'] ?>" class="btn mb-1 btn-warning btn-sm"><i class="fa fa-edit"></i></button>
                                                     <button type="button" data-toggle="modal" data-target="#delete<?= $user['id_user'] ?>" class="btn mb-1 btn-danger btn-sm"><i class="fa fa-trash"></i></button>
@@ -98,7 +103,7 @@
                                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="/user/insert" method="post">
+                                                <form action="/user/update/<?= $row['id_user'] ?>" method="post">
                                                 <div class="modal-body">
                                                     
                                                         <div class="form-group">
@@ -131,17 +136,17 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Tambah User</h5>
+                                                    <h5 class="modal-title">Hapus User</h5>
                                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                     </button>
                                                 </div>
                                                 
                                                 <div class="modal-body">
-                                                    
+                                                    <p>Apakah anda yakin ingin menghapus user <strong><?= $row['username'] ?></strong></p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Hapus</button>
+                                                    <a href="/user/delete/<?= $row['id_user'] ?>" class="btn btn-danger">Hapus</a>
                                                 </div>
                                                 </form>
 

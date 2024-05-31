@@ -6,6 +6,10 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('dashboard');
+        $data = [
+            'title' => 'Admin',
+            'subtitle' => 'Dashboard'
+        ];
+        return view('dashboard', $data);
     }
 }

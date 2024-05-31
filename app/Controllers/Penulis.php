@@ -13,7 +13,11 @@ class Penulis extends ResourceController
     public function index()
     {
         $model = new PenulisModel();
-        $data['writers'] = $model->findAll();
+        $data = [
+            'writers' => $model->findAll(),
+            'title' => 'Admin',
+            'subtitle' => 'Penulis'
+        ];
 
         return view('penulis_view', $data);
     }
