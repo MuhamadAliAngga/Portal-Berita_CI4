@@ -6,13 +6,17 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+
+//Routes Beranda
+$routes->get('/', 'Beranda::index');
+
 //Routes Aurthentication
 $routes->get('/login', 'Auth::index');
 $routes->get('/login/logout', 'Auth::logout');
 $routes->post('/login/proses', 'Auth::login');
 
 //routes dashboard
-$routes->get('/', 'Home::index');
+$routes->get('/dashboard', 'Home::index');
 
 //routes artikel
 $routes->get('/artikel', 'Artikel::index');

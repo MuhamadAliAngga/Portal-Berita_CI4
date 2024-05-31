@@ -19,7 +19,7 @@ class Artikel extends BaseController
     {
         $data = [
             'data' => $this->artikel->findAll(),
-            'title' => 'Admin',
+            'title' => 'Artikel',
             'subtitle' => 'Artikel'
         ];
         return view('artikel_view', $data);
