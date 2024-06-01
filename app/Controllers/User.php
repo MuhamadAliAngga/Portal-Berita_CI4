@@ -3,10 +3,18 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class User extends BaseController
 {
+    protected $user;
+
+    public function __construct()
+    {
+        $this->user = new UserModel();
+    }
+
     public function index()
     {
         $data = [
@@ -14,6 +22,12 @@ class User extends BaseController
             'subtitle' => 'User'
         ];
         return view('/user', $data);
+    }
 
+    public function delete($id)
+    {
+        $this->user->delete($id);
+        session()->setFlashdata('berhasil', 'Data user berhasil dihapus!!');
+        return redirect()->to('/user');
     }
 }

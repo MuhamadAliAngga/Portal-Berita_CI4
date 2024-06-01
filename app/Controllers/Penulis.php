@@ -2,19 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use App\Models\PenulisModel;
-use CodeIgniter\RESTful\ResourceController;
 
-class Penulis extends ResourceController
+class Penulis extends BaseController
 {
-    protected $modelName = 'App\Models\PenulisModel';
-    protected $format    = 'json';
+    protected $penulis;
+
+    public function __construct()
+    {
+        $this->penulis = new PenulisModel();
+    }
 
     public function index()
     {
-        $model = new PenulisModel();
-        $data['writers'] = $model->findAll();
         $data = [
+            'data' => $this->penulis->findAll(),
             'title' => 'Admin',
             'subtitle' => 'Penulis'
         ];
@@ -22,88 +25,93 @@ class Penulis extends ResourceController
         return view('penulis_view', $data);
     }
 
-    public function show($id = null)
+    public function insert()
     {
-        $data = $this->model->find($id);
-        if ($data) {
-            return $this->respond($data);
-        } else {
-            return $this->failNotFound('Penulis tidak ditemukan');
-        }
-    }
-
-    public function create()
-    {
-        $input = $this->request->getPost();
-        $file = $this->request->getFile('foto');
-
-        if ($file->isValid() && !$file->hasMoved()) {
-            $newName = $file->getRandomName();
-            $file->move(ROOTPATH . 'app/libraries/poto', $newName);
-            $input['foto'] = $newName;
-        } else {
-            return $this->fail('Gagal mengunggah foto');
-        }
-
-        // Validasi input jika diperlukan
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'nama_penulis' => 'required|max_length[255]',
+        // Validasi input
+        if (!$this->validate([
+            'nama_penulis' => 'required|min_length[3]|max_length[255]',
             'biografi' => 'required',
-            'foto' => 'required',
-            'link_portofolio' => 'required|valid_url',
-        ]);
-
-        if (!$validation->run($input)) {
-            return $this->fail($validation->getErrors());
+            'foto' => 'uploaded[foto]|max_size[foto,1024]|is_image[foto]',
+            'link_portofolio' => 'required'
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $id = $this->model->insert($input);
-        if ($id) {
-            $newWriter = $this->model->find($id);
-            return $this->respondCreated($newWriter, 'Penulis berhasil ditambahkan');
-        } else {
-            return $this->fail('Gagal menambahkan penulis');
-        }
+        // Ambil file foto
+        $foto = $this->request->getFile('foto');
+
+        // Generate nama file baru
+        $namaFoto = $foto->getRandomName();
+
+        // Pindahkan file foto ke folder public/image
+        $foto->move(ROOTPATH . 'public/image', $namaFoto);
+
+        $data = [
+            'nama_penulis' => $this->request->getVar('nama_penulis'),
+            'biografi' => $this->request->getVar('biografi'),
+            'foto' => $namaFoto,
+            'link_portofolio' => $this->request->getVar('link_portofolio')
+        ];
+
+        $this->penulis->insert($data);
+        session()->setFlashdata('berhasil', 'Data penulis berhasil ditambah!!');
+        return redirect()->to(site_url('/penulis'));
     }
 
-    public function update($id = null)
+    public function update($id)
     {
-        $input = $this->request->getRawInput();
-        $file = $this->request->getFile('foto');
-
-        if ($file && $file->isValid() && !$file->hasMoved()) {
-            $newName = $file->getRandomName();
-            $file->move(ROOTPATH . 'app/libraries/poto', $newName);
-            $input['foto'] = $newName;
-        }
-
-        // Validasi input jika diperlukan
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'nama_penulis' => 'required|max_length[255]',
+        // Validasi input
+        if (!$this->validate([
+            'nama_penulis' => 'required|min_length[3]|max_length[255]',
             'biografi' => 'required',
-            'link_portofolio' => 'required|valid_url',
-        ]);
-
-        if (!$validation->run($input)) {
-            return $this->fail($validation->getErrors());
+            'foto' => 'max_size[foto,1024]|is_image[foto]',
+            'link_portofolio' => 'required'
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        if ($this->model->update($id, $input)) {
-            $updatedWriter = $this->model->find($id);
-            return $this->respondUpdated($updatedWriter, 'Penulis berhasil diperbarui');
+        // Ambil data penulis berdasarkan ID
+        $penulis = $this->penulis->find($id);
+
+        // Jika ada file foto baru diunggah
+        if ($foto = $this->request->getFile('foto')) {
+            // Hapus foto lama jika ada
+            if (file_exists($penulis['foto'])) {
+                unlink($penulis['foto']);
+            }
+            // Generate nama file baru
+            $namaFoto = $foto->getRandomName();
+            // Pindahkan file foto baru ke folder public/image
+            $foto->move(ROOTPATH . 'public/image', $namaFoto);
+            $fotoPath = $namaFoto;
         } else {
-            return $this->fail('Gagal memperbarui penulis');
+            // Jika tidak ada foto baru diunggah, gunakan foto yang sudah ada
+            $fotoPath = $penulis['foto'];
         }
+
+        $data = [
+            'nama_penulis' => $this->request->getVar('nama_penulis'),
+            'biografi' => $this->request->getVar('biografi'),
+            'foto' => $fotoPath,
+            'link_portofolio' => $this->request->getVar('link_portofolio')
+        ];
+
+        $this->penulis->update($id, $data);
+        session()->setFlashdata('berhasil', 'Data penulis berhasil diubah!!');
+        return redirect()->to('/penulis');
     }
 
-    public function delete($id = null)
+    public function delete($id)
     {
-        if ($this->model->delete($id)) {
-            return $this->respondDeleted('Penulis berhasil dihapus');
-        } else {
-            return $this->failNotFound('Penulis tidak ditemukan');
+        // Ambil data penulis berdasarkan ID
+        $penulis = $this->penulis->find($id);
+        // Hapus foto penulis dari folder public/image jika ada
+        if (file_exists($penulis['foto'])) {
+            unlink($penulis['foto']);
         }
+        // Hapus data penulis dari database
+        $this->penulis->delete($id);
+        session()->setFlashdata('berhasil', 'Data penulis berhasil dihapus!!');
+        return redirect()->to('/penulis');
     }
 }
