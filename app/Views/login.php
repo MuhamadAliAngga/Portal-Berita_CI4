@@ -36,19 +36,21 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center"> <h4>Login Admin Portal Berita</h4></a>
+                                <a class="text-center"> <h4><?= $title ?></h4></a>
                                 
-                                <form class="mt-5 mb-5 login-input" method="post" action="/login/prosesLogin">
+                                <form class="mt-5 mb-5 login-input" method="post" action="/login/proses">
                                 <?php
-                                    if (session()->getFlashdata('pesan')) {
-                                        echo session()->getFlashdata('pesan');
+                                    $invalidUser = (session()->getFlashdata('error')) ? 'is-invalid' : null;
+                                    $invalidPass = (session()->getFlashdata('error')) ? 'is-invalid' : null;
+                                    if (session()->getFlashdata('error')) {
+                                        echo '<div class="alert alert-danger">'. session()->getFlashdata('error') .'</div>';
                                     }
                                 ?>
                                     <div class="form-group">
-                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                        <input type="text" name="username" class="form-control <?= $invalidUser ?>" placeholder="Username" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control <?= $invalidPass ?>" placeholder="Password">
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Masuk</button>
                                 </form>

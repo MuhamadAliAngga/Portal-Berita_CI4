@@ -2,11 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Auth extends BaseController
 {
+    public function __construct()
+    {
+        $this->user = new UserModel();
+    }
     public function index()
     {
         $data = [
@@ -15,22 +20,46 @@ class Auth extends BaseController
         return view('login', $data);
     }
 
-    public function prosesLogin()
+    public function login()
     {
         $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
-        if ($username == 'ramzi' && $password == '123') {
-            
-        return redirect()->to('/');
+        $password = md5($this->request->getVar('password'));
+
+        $data = $this->user->where('username', $username)->first();
+
+        if ($password == '' || $data == '') {
+            $sessError = [
+                'error' => 'Username dan Password harus diisi!!'
+            ];
+            session()->setFlashdata($sessError);
+            return redirect()->to('/login');
+        } elseif ($password == $data['password']) {
+            $simpan_session = [
+                'id_user' => $data['id_user'],
+                'username' => $data['username'],
+                'akses' => $data['akses']
+            ];
+            session()->set($simpan_session);
+            $pesan = [
+                'berhasil' => 'Selamat Datang'
+            ];
+            session()->setFlashdata($pesan);
+            return redirect()->to('/');
         } else {
-            session()->setFlashdata('pesan', '<div class="alert alert-danger">Username atau password salah!!</div>');
+            $sessError = [
+                'error' => 'Username atau Password salah!!'
+            ];
+            session()->setFlashdata($sessError);
             return redirect()->to('/login');
         }
-        
     }
+
 
     public function logout()
     {
-        # code...
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/login');
     }
+
 }

@@ -2,16 +2,18 @@
 
 namespace Config;
 
-use CodeIgniter\Config\Filters as BaseFilters;
+use App\Filters\UserFilter;
+use App\Filters\AdminFilter;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
-use CodeIgniter\Filters\DebugToolbar;
-use CodeIgniter\Filters\ForceHTTPS;
 use CodeIgniter\Filters\Honeypot;
-use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
-use CodeIgniter\Filters\PerformanceMetrics;
+use CodeIgniter\Filters\ForceHTTPS;
+use CodeIgniter\Filters\DebugToolbar;
+use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use CodeIgniter\Filters\PerformanceMetrics;
+use CodeIgniter\Config\Filters as BaseFilters;
 
 class Filters extends BaseFilters
 {
@@ -34,6 +36,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'UserFilter'    => UserFilter::class,
+        'AdminFilter'   => AdminFilter::class,
     ];
 
     /**
@@ -69,15 +73,25 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'AdminFilter' => [
+                'except' => ['login/*', 'login']
+            ],
+            'UserFilter' => [
+                'except' => ['login/*', 'login']
+            ],
         ],
         'after' => [
-            // 'honeypot',
-            // 'secureheaders',
+            'AdminFilter' => [
+                'except' => ['/*']
+            ],
+            'UserFilter' => [
+                'except' => ['/', 'penulis', 'artikel', 'profil']
+            ],
+            'toolbar',
+
         ],
     ];
+
 
     /**
      * List of filter aliases that works on a

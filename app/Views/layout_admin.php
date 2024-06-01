@@ -66,6 +66,17 @@
                 </div>
                 <div class="header-left">
 
+                    <div class="input-group icons">
+                        <?php 
+                            if (session()->getFlashdata('berhasil')) {
+                                echo '<div class="alert alert-primary alert-dismissible fade show">';
+                                echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                                echo session()->getFlashdata('berhasil').' <strong>'.session()->get('username').'</strong></div>';
+                            }
+                        ?>
+                    </div>
+
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
@@ -75,18 +86,19 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="<?= base_url('template/theme/') ?>images/user/1.png" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href="/profil"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
+                                        
+                                        
+                                        
+                                        <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
 
-
-
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -122,12 +134,13 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel</span>
                         </a>
                     </li>
+                    <?php if(session()->akses == 1) : ?>
                     <li>
                         <a href="/user" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">User</span>
                         </a>
                     </li>
-
+                    <?php endif ?>
                 </ul>
             </div>
         </div>
