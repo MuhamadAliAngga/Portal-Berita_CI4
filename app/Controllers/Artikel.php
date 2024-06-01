@@ -14,6 +14,10 @@ class Artikel extends ResourceController
     {
         $model = new ArtikelModel();
         $data['articles'] = $model->findAll();
+        $data = [
+            'title' => 'Admin',
+            'subtitle' => 'Artikel'
+        ];
 
         return view('artikel_view', $data);
     }

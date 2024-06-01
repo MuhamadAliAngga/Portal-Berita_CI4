@@ -92,7 +92,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href="/profil"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
                                         
                                         
@@ -156,8 +156,8 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)"><?= $title ?></a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)"><?= $subtitle ?></a></li>
                     </ol>
                 </div>
             </div>

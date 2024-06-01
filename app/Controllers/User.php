@@ -9,7 +9,11 @@ class User extends BaseController
 {
     public function index()
     {
-        return view('user');
+        $data = [
+            'title' => 'Admin',
+            'subtitle' => 'User'
+        ];
+        return view('/user', $data);
 
     }
 }

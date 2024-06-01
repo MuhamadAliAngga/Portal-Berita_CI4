@@ -22,7 +22,7 @@ class Auth extends BaseController
     public function prosesLogin()
     {
         $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
+        $password = md5($this->request->getVar('password'));
         
         $data = $this->user->where('username', $username)->first();
 

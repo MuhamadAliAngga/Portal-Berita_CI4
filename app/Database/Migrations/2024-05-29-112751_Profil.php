@@ -6,6 +6,7 @@ use CodeIgniter\Database\Migration;
 
 class Profil extends Migration
 {
+	
     public function up()
     {
         // Membuat kolom/field untuk tabel profil
