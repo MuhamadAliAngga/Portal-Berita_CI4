@@ -2,17 +2,20 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\UserModel;
+use App\Models\ProfilModel;
+use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class User extends BaseController
 {
     protected $user;
+    protected $profil;
 
     public function __construct()
     {
         $this->user = new UserModel();
+        $this->profil = new ProfilModel();
     }
 
     public function index()
@@ -27,16 +30,23 @@ class User extends BaseController
 
     public function insert()
     {
-        // Validasi input
-        
-
-        $data = [
+        $dataUser = [
             'username' => $this->request->getVar('username'),
             'password' => md5($this->request->getVar('password')),
             'akses' => $this->request->getVar('akses'),
         ];
+        $user = $this->user->insert($dataUser);
 
-        $this->user->insert($data);
+        $dataProfil = [
+            'id_user' => $user,
+            'nama_lengkap' => $this->request->getVar('nama_lengkap'),
+            'biografi' => $this->request->getVar('biografi'),
+            'foto_profil' => $this->request->getVar('foto_profil'),
+            'link_portofolio' => $this->request->getVar('link_portofolio')
+        ];
+        $this->profil->insert($dataProfil);
+
+        
         session()->setFlashdata('berhasil', 'Data user berhasil ditambah!!');
         return redirect()->to(site_url('/user'));
     }
