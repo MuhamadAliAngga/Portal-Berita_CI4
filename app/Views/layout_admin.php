@@ -80,7 +80,12 @@
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
-
+                    <li class="icons d-none d-md-flex">
+                            <a class="log-user">
+                                <span><?= session()->get('username') ?></span>
+                            </a>
+                            
+                        </li>
 
 
                         <li class="icons dropdown">

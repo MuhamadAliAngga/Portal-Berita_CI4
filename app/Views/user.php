@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <select name="akses" id="akses" class="form-control input-rounded">
-                            <option value="">Pilih</option>
+                            <option>Pilih</option>
                             <option value="1">Admin</option>
                             <option value="2">Penulis</option>
                         </select>

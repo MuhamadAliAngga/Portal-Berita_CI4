@@ -28,20 +28,11 @@ class User extends BaseController
     public function insert()
     {
         // Validasi input
-        if (!$this->validate([
-            'username' => 'required|min_length[3]|max_length[50]',
-            'password' => 'required|min_length[6]',
-            'akses' => 'required|in_list[1,2]' // Assuming '1' for Admin and '2' for Penulis
-        ])) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-
-        // Hash password sebelum menyimpan
-        $hashedPassword = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+        
 
         $data = [
             'username' => $this->request->getVar('username'),
-            'password' => $hashedPassword,
+            'password' => md5($this->request->getVar('password')),
             'akses' => $this->request->getVar('akses'),
         ];
 
