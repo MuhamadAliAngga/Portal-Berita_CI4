@@ -19,7 +19,8 @@ class User extends BaseController
     {
         $data = [
             'title' => 'Admin',
-            'subtitle' => 'User'
+            'subtitle' => 'User',
+            'data' => $this->user->findAll()
         ];
         return view('/user', $data);
     }
