@@ -37,11 +37,14 @@ class User extends BaseController
         ];
         $user = $this->user->insert($dataUser);
 
+        $foto = $this->request->getFile('foto_profil');
+        $filename = $foto->getRandomName();
+        $foto->move(ROOTPATH . 'public/image/profil/', $filename);
         $dataProfil = [
             'id_user' => $user,
             'nama_lengkap' => $this->request->getVar('nama_lengkap'),
             'biografi' => $this->request->getVar('biografi'),
-            'foto_profil' => $this->request->getVar('foto_profil'),
+            'foto_profil' => $filename,
             'link_portofolio' => $this->request->getVar('link_portofolio')
         ];
         $this->profil->insert($dataProfil);

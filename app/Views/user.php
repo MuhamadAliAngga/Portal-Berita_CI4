@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<form action="/user/insert" method="post">
+<form action="/user/insert" method="post" enctype="multipart/form-data">
     <!-- Modal Tambah User -->
     <div class="modal fade" id="tambah">
         <div class="modal-dialog" role="document">
@@ -116,7 +116,7 @@
                         <textarea class="form-control h-150px" rows="6" name="biografi" id="comment"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="foto_profil" class="form-control input-rounded"
+                        <input type="file" name="foto_profil" class="form-control input-rounded"
                             placeholder="Foto Profil">
                     </div>
                     <div class="form-group">

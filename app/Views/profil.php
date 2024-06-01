@@ -1,12 +1,12 @@
 <?= $this->extend('layout_admin') ?>
 <?= $this->section('content') ?>
 <!-- isi konten -->
+<?php foreach($profil as $row) {?>
 <div class="card">
     <div class="card-body">
         <div class="media align-items-center mb-4">
-            <img class="mr-3" src="<?= base_url('template/theme/') ?>images/avatar/11.png" width="80" height="80" alt="">
+            <img class="mr-3" src="<?= base_url('image/profil/'.$row->foto_profil) ?>" width="80"  alt="">
             <div class="media-body">
-                <?php foreach($profil as $row) {?>
                 <h3 class="mb-0"><?= $row->nama_lengkap ?></h3>
                 
                 <p class="text-muted mb-0"><?= session()->get('username') ?></p>
