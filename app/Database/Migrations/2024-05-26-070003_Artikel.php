@@ -17,7 +17,15 @@ class Artikel extends Migration
 			'id_penulis'         => [
 				'type'           => 'INT'
 			],
-			'judul'      => [
+			'judul'      		 => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
+			],
+			'thumbnail'      => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
+			],
+			'ringkasan' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
