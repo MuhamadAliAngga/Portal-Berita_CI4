@@ -86,14 +86,13 @@
                             <a class="log-user">
                                 <span><?= session()->get('username') ?></span>
                             </a>
-
                         </li>
 
 
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
-                                <span class="activity active"></span>
-                                <img src="<?= base_url('template/theme/') ?>images/user/1.png" height="40" width="40"
+                                <span class=""></span>
+                                <img src="<?= base_url('image/profil/') . $profil['foto_profil'] ?>" height="40" width="40"
                                     alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
@@ -129,7 +128,7 @@
                     <li class="nav-label">Dashboard</li>
 
                     <li>
-                        <a href="/" aria-expanded="false">
+                        <a href="/dashboard" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>

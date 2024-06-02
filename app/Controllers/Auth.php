@@ -3,14 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ProfilModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Auth extends BaseController
 {
+    protected $user;
+    protected $profil;
+
     public function __construct()
     {
         $this->user = new UserModel();
+        $this->profil = new ProfilModel();
     }
     public function index()
     {
@@ -26,7 +31,7 @@ class Auth extends BaseController
         $password = md5($this->request->getVar('password'));
 
         $data = $this->user->where('username', $username)->first();
-
+        
         if ($password == '' || $data == '') {
             $sessError = [
                 'error' => 'Username dan Password harus diisi!!'
@@ -34,10 +39,12 @@ class Auth extends BaseController
             session()->setFlashdata($sessError);
             return redirect()->to('/login');
         } elseif ($password == $data['password']) {
+            $profil = $this->profil->getProfilId($data['id_user']);
             $simpan_session = [
                 'id_user' => $data['id_user'],
                 'username' => $data['username'],
-                'akses' => $data['akses']
+                'akses' => $data['akses'],
+                'profil' => $profil
             ];
             session()->set($simpan_session);
             $pesan = [

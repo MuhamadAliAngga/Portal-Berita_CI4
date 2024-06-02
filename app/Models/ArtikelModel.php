@@ -8,7 +8,7 @@ class ArtikelModel extends Model
 {
     protected $table = 'artikel';
     protected $primaryKey = 'id_artikel';
-    protected $allowedFields = ['id_penulis', 'judul', 'isi', 'tanggal_dibuat'];
+    protected $allowedFields = ['id_profil', 'judul', 'thumbnail', 'ringkasan' ,'isi', 'tanggal_dibuat'];
 
     public function getArtikels()
     {

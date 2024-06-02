@@ -6,7 +6,7 @@
     <?php foreach ($artikel as $row): ?>
         <div class="col-md-6 col-lg-6">
             <div class="card">
-                <img class="img-fluid" src="images/big/img1.jpg" alt="rusak">
+                <img class="img-fluid" src="<?= base_url('image/thumbnail/') . $row->thumbnail ?>" alt="rusak">
                 <div class="card-body">
                     <div class="d-sm-flex justify-content-between mb-0">
                         <h5 class="card-title"><?= $row->judul ?></h5>

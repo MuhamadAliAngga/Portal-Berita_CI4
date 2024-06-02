@@ -17,20 +17,24 @@ class Artikel extends BaseController
 
     public function index()
     {
+        $getProfil = session()->get('profil');
         $data = [
             'artikel' => $this->artikel->getArtikels(),
             'title' => 'Admin',
-            'subtitle' => 'Artikel'
+            'subtitle' => 'Artikel',
+            'profil' => $getProfil
         ];
         //var_dump($data);die;
         return view('artikel_view', $data);
     }
     public function tambah()
     {
+        $getProfil = session()->get('profil');
         $data = [
             'title' => 'Admin',
             'subtitle' => 'Artikel </a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Tambah Artikel</a></li>'
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Tambah Artikel</a></li>',
+            'profil' => $getProfil
         ];
 
         return view('artikel_add', $data);
@@ -38,11 +42,17 @@ class Artikel extends BaseController
 
     public function insert()
     {
+        $thumbnail = $this->request->getFile('thumbnail');
+        $filename = $thumbnail->getRandomName();
+        $thumbnail->move(ROOTPATH . 'public/image/thumbnail/', $filename);
+        $currentDate = (new \DateTime())->format('Y-m-d');
         $data = [
-            'judul' => $this->request->getVar('judul'),
-            'isi' => $this->request->getVar('isi'),
-            'id_penulis' => $this->request->getVar('id_penulis'),
-            'tanggal_dibuat' => $this->request->getVar('tanggal_dibuat')
+            'id_profil' => $this->request->getPost('id_profil'),
+            'judul' => $this->request->getPost('judul'),
+            'thumbnail' => $filename,
+            'ringkasan' => $this->request->getPost('ringkasan'),
+            'isi' => $this->request->getPost('isi'),
+            'tanggal_dibuat' => $currentDate
         ];
         $this->artikel->insert($data);
         
