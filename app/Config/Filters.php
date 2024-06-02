@@ -85,7 +85,7 @@ class Filters extends BaseFilters
                 'except' => ['/*']
             ],
             'UserFilter' => [
-                'except' => ['/', 'penulis', 'artikel', 'profil']
+                'except' => ['dashboard', 'penulis', 'artikel', 'profil']
             ],
             'toolbar',
 

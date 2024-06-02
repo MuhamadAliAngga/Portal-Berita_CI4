@@ -44,7 +44,7 @@ class Auth extends BaseController
                 'berhasil' => 'Selamat Datang'
             ];
             session()->setFlashdata($pesan);
-            return redirect()->to('/');
+            return redirect()->to('dashboard');
         } else {
             $sessError = [
                 'error' => 'Username atau Password salah!!'
@@ -61,5 +61,4 @@ class Auth extends BaseController
         $session->destroy();
         return redirect()->to('/login');
     }
-
 }

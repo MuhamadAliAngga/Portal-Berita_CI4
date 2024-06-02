@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Portal Berita - <?= $title.' '.$subtitle ?></title>
+    <title>Portal Berita - <?= $title . ' ' . $subtitle ?></title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('template/theme/') ?>images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -67,24 +67,24 @@
                 <div class="header-left">
 
                     <div class="input-group icons">
-                        <?php 
-                            if (session()->getFlashdata('berhasil')) {
-                                echo '<div class="alert alert-primary alert-dismissible fade show">';
-                                echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+                        <?php
+                        if (session()->getFlashdata('berhasil')) {
+                            echo '<div class="alert alert-primary alert-dismissible fade show">';
+                            echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 
-                                echo session()->getFlashdata('berhasil').' <strong>'.session()->get('username').'</strong></div>';
-                            }
+                            echo session()->getFlashdata('berhasil') . ' <strong>' . session()->get('username') . '</strong></div>';
+                        }
                         ?>
                     </div>
 
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
-                    <li class="icons d-none d-md-flex">
+                        <li class="icons d-none d-md-flex">
                             <a class="log-user">
                                 <span><?= session()->get('username') ?></span>
                             </a>
-                            
+
                         </li>
 
 
@@ -99,9 +99,9 @@
                                         <li>
                                             <a href="/profil"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
-                                        
-                                        
-                                        
+
+
+
                                         <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
 
                                     </ul>
@@ -139,12 +139,12 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel</span>
                         </a>
                     </li>
-                    <?php if(session()->akses == 1) : ?>
-                    <li>
-                        <a href="/user" aria-expanded="false">
-                            <i class="icon-user menu-icon"></i><span class="nav-text">User</span>
-                        </a>
-                    </li>
+                    <?php if (session()->akses == 1) : ?>
+                        <li>
+                            <a href="/user" aria-expanded="false">
+                                <i class="icon-user menu-icon"></i><span class="nav-text">User</span>
+                            </a>
+                        </li>
                     <?php endif ?>
                 </ul>
             </div>
