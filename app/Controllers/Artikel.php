@@ -20,6 +20,7 @@ class Artikel extends BaseController
         $getProfil = session()->get('profil');
         $data = [
             'artikel' => $this->artikel->getArtikels(),
+            'artikel_all' => $this->artikel->getAllArtikels(),
             'title' => 'Admin',
             'subtitle' => 'Artikel',
             'profil' => $getProfil
