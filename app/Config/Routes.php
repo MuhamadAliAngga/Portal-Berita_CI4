@@ -20,6 +20,8 @@ $routes->get('/dashboard', 'Home::index');
 
 //routes artikel
 $routes->get('/artikel', 'Artikel::index');
+$routes->get('/artikel/read/(:num)', 'Artikel::read/$1');
+$routes->get('/artikel/tambah', 'Artikel::tambah');
 $routes->post('/artikel/insert', 'Artikel::insert');
 $routes->post('/artikel/update/(:num)', 'Artikel::update/$1');
 $routes->get('/artikel/delete/(:num)', 'Artikel::delete/$1');

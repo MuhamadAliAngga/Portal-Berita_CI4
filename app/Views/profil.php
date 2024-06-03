@@ -1,7 +1,7 @@
 <?= $this->extend('layout_admin') ?>
 <?= $this->section('content') ?>
 <!-- isi konten -->
-<?php foreach($profil as $row) {?>
+<?php foreach($getprofil as $row) {?>
 <div class="card">
     <div class="card-body">
         <div class="media align-items-center mb-4">

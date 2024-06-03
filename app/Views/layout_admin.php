@@ -9,6 +9,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('template/theme/') ?>images/favicon.png">
     <!-- Custom Stylesheet -->
+    <link href="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote.css" rel="stylesheet">
     <link href="<?= base_url('template/theme/') ?>css/style.css" rel="stylesheet">
 
 </head>
@@ -42,7 +43,8 @@
             <div class="brand-logo">
                 <a href="index.html">
                     <b class="logo-abbr"><img src="<?= base_url('template/theme/') ?>images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="<?= base_url('template/theme/') ?>images/logo-compact.png" alt=""></span>
+                    <span class="logo-compact"><img src="<?= base_url('template/theme/') ?>images/logo-compact.png"
+                            alt=""></span>
                     <span class="brand-title">
                         <img src="<?= base_url('template/theme/') ?>images/logo-text.png" alt="">
                     </span>
@@ -84,14 +86,14 @@
                             <a class="log-user">
                                 <span><?= session()->get('username') ?></span>
                             </a>
-
                         </li>
 
 
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
-                                <span class="activity active"></span>
-                                <img src="<?= base_url('template/theme/') ?>images/user/1.png" height="40" width="40" alt="">
+                                <span class=""></span>
+                                <img src="<?= base_url('image/profil/') . $profil['foto_profil'] ?>" height="40" width="40"
+                                    alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -102,7 +104,8 @@
 
 
 
-                                        <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="/login/logout"><i class="icon-key"></i> <span>Logout</span></a>
+                                        </li>
 
                                     </ul>
                                 </div>
@@ -125,7 +128,7 @@
                     <li class="nav-label">Dashboard</li>
 
                     <li>
-                        <a href="/" aria-expanded="false">
+                        <a href="/dashboard" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
@@ -139,7 +142,7 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel</span>
                         </a>
                     </li>
-                    <?php if (session()->akses == 1) : ?>
+                    <?php if (session()->akses == 1): ?>
                         <li>
                             <a href="/user" aria-expanded="false">
                                 <i class="icon-user menu-icon"></i><span class="nav-text">User</span>
@@ -183,7 +186,8 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Admin Portal</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Admin
+                        Portal</a> 2018</p>
             </div>
         </div>
         <!--**********************************
@@ -202,7 +206,8 @@
     <script src="<?= base_url('template/theme/') ?>js/settings.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/gleek.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/styleSwitcher.js"></script>
-
+    <script src="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote.min.js"></script>
+    <script src="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote-init.js"></script>
 </body>
 
 </html>

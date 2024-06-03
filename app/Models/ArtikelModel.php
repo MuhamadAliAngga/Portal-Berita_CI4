@@ -8,13 +8,31 @@ class ArtikelModel extends Model
 {
     protected $table = 'artikel';
     protected $primaryKey = 'id_artikel';
-    protected $allowedFields = ['id_penulis', 'judul', 'isi', 'tanggal_dibuat'];
+    protected $allowedFields = ['id_profil', 'judul', 'thumbnail', 'ringkasan' ,'isi', 'tanggal_dibuat'];
 
-    // Optional: Define validation rules directly in the model
-    protected $validationRules = [
-        'judul' => 'required|min_length[3]|max_length[255]',
-        'isi' => 'required',
-        'id_penulis' => 'required|integer',
-        'tanggal_dibuat' => 'required|valid_date[Y-m-d]'
-    ];
+    public function getArtikels()
+    {
+        $profil = session()->get('profil');
+        $builder = $this->db->table('artikel'); 
+        $builder->join('profil', 'artikel.id_profil = profil.id_profil');
+        $query = $builder->getWhere(['profil.id_profil' => $profil['id_profil']]);
+
+        return $query->getResult();
+    }
+    public function getAllArtikels()
+    {
+        $builder = $this->db->table('artikel'); 
+        $builder->join('profil', 'artikel.id_profil = profil.id_profil');
+        $query = $builder->get();
+
+        return $query->getResult();
+    }
+
+    public function readArtikel()
+    {
+        return $this->join('profil', 'artikel.id_profil = profil.id_profil')
+        ->select('artikel.*, profil.*');
+        
+    }
+
 }

@@ -20,10 +20,12 @@ class User extends BaseController
 
     public function index()
     {
+        $getProfil = session()->get('profil');
         $data = [
             'data' => $this->user->findAll(),
             'title' => 'Admin',
-            'subtitle' => 'User'
+            'subtitle' => 'User',
+            'profil' => $getProfil
         ];
         return view('user', $data);
     }

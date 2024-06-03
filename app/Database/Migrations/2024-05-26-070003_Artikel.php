@@ -14,7 +14,7 @@ class Artikel extends Migration
 				'type'           => 'INT',
 				'auto_increment' => true
 			],
-			'id_penulis'         => [
+			'id_profil'         => [
 				'type'           => 'INT'
 			],
 			'judul'      		 => [
