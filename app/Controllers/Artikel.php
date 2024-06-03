@@ -28,6 +28,20 @@ class Artikel extends BaseController
         //var_dump($data);die;
         return view('artikel_view', $data);
     }
+
+    public function read($id)
+    {
+        $getProfil = session()->get('profil');
+        $data = [
+            'artikel' => $this->artikel->readArtikel()->find($id),
+            'title' => 'Admin',
+            'subtitle' => 'Artikel',
+            'profil' => $getProfil
+        ];
+        // var_dump($data);die;
+        return view('artikel_read', $data);
+    }
+
     public function tambah()
     {
         $getProfil = session()->get('profil');

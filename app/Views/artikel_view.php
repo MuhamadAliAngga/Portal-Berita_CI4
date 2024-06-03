@@ -20,7 +20,7 @@
                     </div>
                     <p class="card-text"><?= $row->ringkasan ?></p>
                     <div class="text-center ago mb-1">
-                        <a href="" class="btn mb-1 btn-rounded btn-info">Selengkapnya</a>
+                        <a href="/artikel/read/<?= $row->id_artikel ?>" class="btn mb-1 btn-rounded btn-info">Selengkapnya</a>
                     </div>
                     <p class="card-text"><small class="text-muted"><?= $row->tanggal_dibuat ?></small>
                     </p>
@@ -45,7 +45,7 @@
                     </div>
                     <p class="card-text"><?= $row->ringkasan ?></p>
                     <div class="text-center ago mb-1">
-                        <a href="" class="btn mb-1 btn-rounded btn-info">Selengkapnya</a>
+                        <a href="/artikel/read/<?= $row->id_artikel ?>" class="btn mb-1 btn-rounded btn-info">Selengkapnya</a>
                     </div>
                     <p class="card-text"><small class="text-muted"><?= $row->tanggal_dibuat ?></small>
                     </p>
@@ -54,8 +54,6 @@
         </div>
     <?php endforeach ?>
     <?php endif ?>
-    
-
 </div>
 
 <?= $this->endSection() ?>

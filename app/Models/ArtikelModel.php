@@ -21,12 +21,18 @@ class ArtikelModel extends Model
     }
     public function getAllArtikels()
     {
-        $profil = session()->get('profil');
         $builder = $this->db->table('artikel'); 
         $builder->join('profil', 'artikel.id_profil = profil.id_profil');
         $query = $builder->get();
 
         return $query->getResult();
+    }
+
+    public function readArtikel()
+    {
+        return $this->join('profil', 'artikel.id_profil = profil.id_profil')
+        ->select('artikel.*, profil.*');
+        
     }
 
 }
