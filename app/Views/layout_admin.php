@@ -9,7 +9,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('template/theme/') ?>images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote.css" rel="stylesheet">
+    <link href="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote.css" rel="stylesheet">
     <link href="<?= base_url('template/theme/') ?>css/style.css" rel="stylesheet">
 
 </head>
@@ -139,7 +139,7 @@
                     </li>
                     <li>
                         <a href="/artikel" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel</span>
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel <?= (session()->get('akses') == 2) ? 'Saya' : '' ?></span>
                         </a>
                     </li>
                     <?php if (session()->akses == 1): ?>
@@ -206,8 +206,8 @@
     <script src="<?= base_url('template/theme/') ?>js/settings.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/gleek.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/styleSwitcher.js"></script>
-    <script src="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote.min.js"></script>
-    <script src="<?= base_url('template/theme/') ?>plugins/summernote/dist/summernote-init.js"></script>
+    <script src="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote.min.js"></script>
+    <script src="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote-init.js"></script>
 </body>
 
 </html>
