@@ -7,10 +7,10 @@
                 <div class="email-box">
                     <div class="read-content">
                         <div class="media pt-2">
-                            <img class="mr-3 rounded-circle" src="images/avatar/1.jpg">
+                            <img class="mr-3 rounded-circle" width="35" src="<?= base_url('image/profil/') . $artikel['foto_profil'] ?>">
                             <div class="media-body">
                                 <h5 class="m-b-3"><?= $artikel['nama_lengkap'] ?></h5>
-                                <p class="m-b-2"><?= $artikel['tanggal_dibuat'] ?></p>
+                                <p class="m-b-2">Diupload pada <strong><?= $artikel['tanggal_dibuat'] ?></strong></p>
                             </div>
                         </div>
                         <hr>
@@ -27,7 +27,7 @@
                         
                     </div>
                     <div class="text-right">
-                        <button class="btn btn-primaryw-md m-b-30" type="button">Send</button>
+                        <a class="btn btn-primaryw-md m-b-30" href="#">Keatas</a>
                     </div>
                 </div>
             </div>

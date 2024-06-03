@@ -48,7 +48,7 @@ class Auth extends BaseController
             ];
             session()->set($simpan_session);
             $pesan = [
-                'berhasil' => 'Selamat Datang'
+                'loginsukses' => 'Selamat Datang'
             ];
             session()->setFlashdata($pesan);
             return redirect()->to('dashboard');

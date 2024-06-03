@@ -22,6 +22,9 @@ $routes->get('/dashboard', 'Home::index');
 $routes->get('/artikel', 'Artikel::index');
 $routes->get('/artikel/read/(:num)', 'Artikel::read/$1');
 $routes->get('/artikel/tambah', 'Artikel::tambah');
+//rout proses artikel
+$routes->post('/artikel/uploadGambar', 'Artikel::uploadGambar');
+$routes->post('artikel/deleteGambar', 'Artikel::deleteGambar');
 $routes->post('/artikel/insert', 'Artikel::insert');
 $routes->post('/artikel/update/(:num)', 'Artikel::update/$1');
 $routes->get('/artikel/delete/(:num)', 'Artikel::delete/$1');

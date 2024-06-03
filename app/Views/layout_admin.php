@@ -9,9 +9,10 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('template/theme/') ?>images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote.css" rel="stylesheet">
     <link href="<?= base_url('template/theme/') ?>css/style.css" rel="stylesheet">
-
+    <!-- Summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/summernote-image-list.min.css') ?>">
 </head>
 
 <body>
@@ -70,11 +71,11 @@
 
                     <div class="input-group icons">
                         <?php
-                        if (session()->getFlashdata('berhasil')) {
+                        if (session()->getFlashdata('loginsukses')) {
                             echo '<div class="alert alert-primary alert-dismissible fade show">';
                             echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 
-                            echo session()->getFlashdata('berhasil') . ' <strong>' . session()->get('username') . '</strong></div>';
+                            echo session()->getFlashdata('loginsukses') . ' <strong>' . session()->get('username') . '</strong></div>';
                         }
                         ?>
                     </div>
@@ -92,8 +93,8 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class=""></span>
-                                <img src="<?= base_url('image/profil/') . $profil['foto_profil'] ?>" height="40" width="40"
-                                    alt="">
+                                <img src="<?= base_url('image/profil/') . $profil['foto_profil'] ?>" height="40"
+                                    width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -139,7 +140,8 @@
                     </li>
                     <li>
                         <a href="/artikel" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel <?= (session()->get('akses') == 2) ? 'Saya' : '' ?></span>
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel
+                                <?= (session()->get('akses') == 2) ? 'Saya' : '' ?></span>
                         </a>
                     </li>
                     <?php if (session()->akses == 1): ?>
@@ -206,8 +208,86 @@
     <script src="<?= base_url('template/theme/') ?>js/settings.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/gleek.js"></script>
     <script src="<?= base_url('template/theme/') ?>js/styleSwitcher.js"></script>
-    <script src="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote.min.js"></script>
-    <script src="<?= base_url('template/theme/') ?>plugins/summernote/distt/summernote-init.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('assets/js/summernote-image-list.min.js') ?>"></script>
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                callbacks: {
+                    onImageUpload: function(files) {
+                        for (let i = 0; i < files.length; i++) {
+                            $.upload(files[i]);
+                        }
+                    },
+                    onMediaDelete: function(target) {
+                        $.delete(target[0].src);
+                    }
+                },
+                height: 200,
+                toolbar: [
+                    ["style", ["bold", "italic", "underline", "clear"]],
+                    ["fontname", ["fontname"]],
+                    ["fontsize", ["fontsize"]],
+                    ["color", ["color"]],
+                    ["para", ["ul", "ol", "paragraph"]],
+                    ["height", ["height"]],
+                    ["insert", ["link", "picture", "imageList", "video", "hr"]],
+
+                ],
+                dialogsInBody: true,
+                imageList: {
+                    endpoint: "<?php echo site_url('artikel/listGambar') ?>",
+                    fullUrlPrefix: "<?php echo base_url('uploads/berkas') ?>/",
+                    thumbUrlPrefix: "<?php echo base_url('uploads/berkas') ?>/"
+                }
+            });
+
+            $.upload = function (file) {
+                let out = new FormData();
+                out.append('file', file, file.name);
+                $.ajax({
+                    method: 'POST',
+                    url: '<?php echo site_url('artikel/uploadGambar') ?>',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    data: out,
+                    success: function (img) {
+                        $('.summernote').summernote('insertImage', img);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error(textStatus + " " + errorThrown);
+                    }
+                });
+            };
+            $.delete = function (src) {
+                $.ajax({
+                    method: 'POST',
+                    url: '<?php echo site_url('artikel/deleteGambar') ?>',
+                    cache: false,
+                    data: {
+                        src: src
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    }
+
+                });
+            };
+        });
+
+        function konfirmasi(url) {
+            var result = confirm("Want to delete?");
+            if (result) {
+                window.location.href = url;
+            }
+        }
+    </script>
 </body>
 
 </html>
