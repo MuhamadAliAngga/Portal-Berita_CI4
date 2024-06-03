@@ -15,9 +15,5 @@ class ProfilModel extends Model
         return $this->where('id_user', $userId)->first();
     }
     
-    public function getProfil()
-    {
-        
-    }
 }
 
