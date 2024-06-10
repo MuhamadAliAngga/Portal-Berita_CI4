@@ -14,7 +14,7 @@
         <a href="#menu">Menu</a>
         <a href="#product">Product</a>
         <a href="#review">Review</a>
-        <a href="#contact">Contact</a>
+        <a href="/Views/profil.php">Profil</a>
         <a href="#blogs">Blogs</a>
     </nav>
     <div class="icon ">
