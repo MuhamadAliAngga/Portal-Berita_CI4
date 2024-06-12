@@ -63,7 +63,7 @@ section
 }
 .heading span
 {
-    color: var(--main-color);
+    color: red;
     text-transform: uppercase;
 }
 
@@ -101,6 +101,59 @@ section
 {
     height: 6rem;
 }
+.header h1 {
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    margin-left: -200px; /* Menambahkan jarak dari tepi kiri jika diperlukan */
+}
+.header span:hover
+{
+    color: red;
+}
+
+
+/*--------DIV NAVBAR--------*/
+.carousel {
+            margin-top: 50px;
+        }
+
+        .carousel-item {
+            height: 60vh;
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .carousel-item h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel-item h1 span {
+            color: #ffcc00;
+        }
+
+        .carousel-item p {
+            font-size: 1.5rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators li {
+            background-color: #000;
+        }
+
+/*--------DIV NAVBAR--------*/
+
+
 
 
 /*--------DIV NAVBAR--------*/

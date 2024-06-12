@@ -6,20 +6,22 @@
 <body>
    <header class="header">
     <a href="#" class="logo">
-        <img src="java.png" alt="Logo">
+        <img src="/image/java.png" alt="Logo Java">
     </a>
+
+    <h1>Dunia<span>Coding</span></h1>
+
     <nav class="navbar">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#product">Product</a>
-        <a href="#review">Review</a>
-        <a href="#contact">Contact</a>
-        <a href="#blogs">Blogs</a>
+        <a href="#about">Pemograman</a>
+        <a href="#menu">Analisis Data</a>
+        <a href="#review">MPSI</a>
+        <a href="#review">KTI</a>
+        <a href="#contact">PSK</a>
+        <a href="#blogs">AIK</a>
     </nav>
     <div class="icon ">
         <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
 
@@ -27,78 +29,53 @@
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
     </div>
-
-    <div class="cart-items-container">
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="java.png" alt="">
-            <div class="content">
-                <h3>Cart Item 01</h3>
-                <div class="price">19$</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="java.png" alt="">
-            <div class="content">
-                <h3>Cart Item 01</h3>
-                <div class="price">19$</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="java.png" alt="">
-            <div class="content">
-                <h3>Cart Item 01</h3>
-                <div class="price">19$</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="java.png" alt="">
-            <div class="content">
-                <h3>Cart Item 01</h3>
-                <div class="price">19$</div>
-            </div>
-        </div>
-        <a href="#" class="btn">Checkout Now</a>
-    </div>
    </header>
 <!--HEADER SECTION END-->
 
 
 <!--HOME SECTION START-->
-<section class="home" id="home">
-    <div class="conten">
-        <h1>Dunia<span>Coding</span></h1>
-        <p>Tingkatkan Keterampilan Koding Anda Bersama Dunia Koding</p>
-            <a href="#" class="btn">Learn Now</a>
-    </div>
-</section>
+<section id="home">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="content text-center">
+                        <h1>Dunia<span>Coding</span></h1>
+                        <p>Tingkatkan Keterampilan Koding Anda Bersama Dunia Koding</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content text-center">
+                        <h1>Belajar<span>Programming</span></h1>
+                        <p>Mulai dari dasar hingga mahir dengan tutorial lengkap</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content text-center">
+                        <h1>Komunitas<span>Developer</span></h1>
+                        <p>Bergabung dengan komunitas dan berkembang bersama</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
 <!--HOME SECTION ENDS--> 
-
-
-<!--ABOUT SECTION STAR-->
-<section class="about" id="about">
-    <h1 class="heading"><span>about</span> us</h1>
-    <div class="row">
-        <div class="image">
-            <img src="java.png" alt="">
-        </div>
-        <div class="content">
-            <h3>what makes our coffee special</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac scelerisque felis.UHDGUG  EFU UEGF UY EFG EUFYGOUW UG EFUG EUYGO EWUGFOERY GF FOYU G FO FYEF U UWGEFU GOF AOW FO FOA WG OEF O F</p>
-            <p>Phasellus at dui in lectus pulvinar mollis. Cras feJHBDFUBDOU  OFE GOUY O FOAWG FUYGEUYGWE   FG UG FUWE GFO GF FOUYGEW FUGF OUWE GFOYGE FOUGOFUWGOUYGEOF  OUYUF OE FEWGF OUEWG O EFrmentum felis ut odio suscipit blandit.</p>
-            <a href="#" class="btn">learn more</a>
-        </div>
-    </div>
-</section>
-<!--ABOUT SECTION END-->
-
 
 <!--MENU SECTION STAR-->
 <section class="menu" id="menu">
-    <h1 class="heading">our <span>menu</span></h1>
+    <h1 class="heading">Tentang<span> Code igniter 4</span></h1>
     <div class="box-container">
         <div class="box">
             <img src="java.png" alt="" >
@@ -293,65 +270,6 @@
 <!--CONTACT SECTION END-->
 
 
-<!--BLOGS SECTION START-->
-<section class="blogs" id="blogs">
-    <h1 class="heading">our <span>blogs</span></h1>
-    <div class="box-container">
-        <div class="box">
-            <div class="image">
-                <img src="aa.jpg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="tittle">Aryo Fadillah Pradana</a>
-                <span>Front End</span>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image">
-                <img src="angga.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="tittle">Muhammad Ali Angga</a>
-                <span>Back End</span>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image">
-                <img src="ramzi.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="tittle">Ahmar Ramzi Sanjaya</a>
-                <span>Back End</span>
-                <a href="ahmar.kelaspagi.my.id" class="btn">read more</a>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image">
-                <img src="warni.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="tittle">Warni</a>
-                <span>Back End</span>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image">
-                <img src="hawasi.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="tittle">Siti Hawasi</a>
-                <span>Front End</span>
-                <a href="Hawasih.kelaspagi.my.id" class="btn">read more</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!--BLOGS SECTION END-->
-
-
 <!--FOOTER SECTION START-->
 <section class="footer">
     <div class="share">
@@ -373,7 +291,46 @@
     <div class="credit">created by <span>Aryo FF</span></div>
 </section>
 <!--FOOTER SECTION END-->
-   <script src="script.js"></script>
+   <script>
+    let cartItem = document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick = () => {
+    cartItem.classList.toggle('active'); // Tutup navbar ketika cart item dibuka
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+// Menutup form pencarian saat salah satu tombol lainnya diklik
+document.querySelector('#search-btn').onclick = () => {
+    document.querySelector('.search-form').classList.toggle('active');
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+let searchForm = document.querySelector('.search-form');
+document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+let navbar = document.querySelector('.navbar');
+        document.querySelector('#menu-btn').onclick = () => {
+            navbar.classList.toggle('active');
+            searchForm.classList.remove('active');
+            cartItem.classList.remove('active');
+}
+
+window.onscroll = () => {
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+   </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 
