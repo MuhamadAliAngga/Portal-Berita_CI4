@@ -13,12 +13,12 @@
 
     <nav class="navbar">
         <a href="#home">Home</a>
-        <a href="#about">Pemograman</a>
-        <a href="#menu">Analisis Data</a>
-        <a href="#review">MPSI</a>
-        <a href="#review">KTI</a>
-        <a href="#contact">PSK</a>
-        <a href="#blogs">AIK</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#product">Product</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+        <a href="#blogs">Blogs</a>
     </nav>
     <div class="icon ">
         <div class="fas fa-search" id="search-btn"></div>
