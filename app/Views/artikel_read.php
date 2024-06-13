@@ -11,6 +11,7 @@
                             <div class="media-body">
                                 <h5 class="m-b-3"><?= $artikel['nama_lengkap'] ?></h5>
                                 <p class="m-b-2">Diupload pada <strong><?= $artikel['tanggal_dibuat'] ?></strong></p>
+                                <p><?= esc($view_count) ?></p>
                             </div>
                         </div>
                         <hr>
