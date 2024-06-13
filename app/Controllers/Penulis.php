@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\PenulisModel;
+use App\Models\ProfilModel;
 
 class Penulis extends BaseController
 {
@@ -11,7 +11,7 @@ class Penulis extends BaseController
 
     public function __construct()
     {
-        $this->penulis = new PenulisModel();
+        $this->penulis = new ProfilModel();
     }
 
     public function index()
