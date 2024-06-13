@@ -12,13 +12,14 @@
     <h1>Dunia<span>Coding</span></h1>
 
     <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#product">Product</a>
-        <a href="#review">Review</a>
-        <a href="#contact">Contact</a>
-        <a href="#blogs">Blogs</a>
+        <a href="#home">Smester 1</a>
+        <a href="#about">Smester 2</a>
+        <a href="#menu">Smester 3</a>
+        <a href="#product">Smester 4</a>
+        <a href="#review">Smester 5</a>
+        <a href="#contact">Smester 6</a>
+        <a href="#blogs">Smester 7</a>
+        <a href="#blogs">Smester 8</a>
     </nav>
     <div class="icon ">
         <div class="fas fa-search" id="search-btn"></div>
@@ -44,7 +45,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="content text-center">
-                        <h1>Dunia<span>Coding</span></h1>
+                        <h1>Pemograman<span>Coding</span></h1>
                         <p>Tingkatkan Keterampilan Koding Anda Bersama Dunia Koding</p>
                     </div>
                 </div>
@@ -75,43 +76,31 @@
 
 <!--MENU SECTION STAR-->
 <section class="menu" id="menu">
-    <h1 class="heading">Tentang<span> Code igniter 4</span></h1>
+    <h1 class="heading">Pemograman<span> II</span></h1>
     <div class="box-container">
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Pengenalan Framework</h3>
         </div>
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Tentang CI4</h3>
         </div>
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Instalasi</h3>
         </div>
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Membuat Database</h3>
         </div>
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Tutorial CI4</h3>
         </div>
         <div class="box">
-            <img src="java.png" alt="" >
-            <h3>teasty and healty</h3>
-            <div class="price">$20.00 <span>$30.00</span></div>
-            <a href="#" class="btn">add to cart</a>
+            <img src="/image/java.png" alt="" >
+            <h3>Project</h3>
         </div>
     </div>
 </section>

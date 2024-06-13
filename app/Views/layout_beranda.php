@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title><?= esc($title) ?></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
@@ -14,7 +15,7 @@
 {
     --main-color:#d3ad7f;
     --black:#13131a;
-    --bg:#010103;
+    --bg: #f0f0f0;
     --border:0.1rem solid rgba(225,225,225,.3);
 
 }
@@ -33,6 +34,7 @@
 html, body
 {
     font-size: 62.5%;
+    padding: 4%;
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
     background: var(--bg);
@@ -53,18 +55,24 @@ section
     padding: 3rem ;
 }
 
-.heading
-{
+.heading {
     text-align: center;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     padding-bottom: 3.5rem;
     font-size: 4rem;
+    font-weight: bold; /* Menambahkan tebal pada teks */
+    font-family: 'Roboto', sans-serif;; /* Contoh jenis font yang menarik */
+    letter-spacing: 2px; /* Menambahkan jarak antar huruf */
+    line-height: 1.2; /* Menyesuaikan ketinggian baris */
 }
-.heading span
-{
-    color: red;
+
+.heading span {
+    color: #ffcc00;
     text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;; /* Memilih jenis font yang sama */
+    letter-spacing: 1px; /* Menyesuaikan jarak antar huruf */
 }
 
 .btn
@@ -90,12 +98,13 @@ section
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
-    border-bottom: 1px solid var(--main-color); /* Tambahkan garis putih di bawah header */
+    border-bottom: 3px solid var(--main-color); /* Tambahkan garis putih di bawah header */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    box-shadow: #000;
 }
 .header .logo img
 {
@@ -105,7 +114,7 @@ section
     font-size: 30px;
     color: black;
     cursor: pointer;
-    margin-left: -200px; /* Menambahkan jarak dari tepi kiri jika diperlukan */
+    margin-left: -20px; /* Menambahkan jarak dari tepi kiri jika diperlukan */
 }
 .header span:hover
 {
@@ -113,25 +122,27 @@ section
 }
 
 
-/*--------DIV NAVBAR--------*/
-.carousel {
-            margin-top: 50px;
-        }
+/*--------CAROUSEL--------*/
+.carousel 
+{
+    margin-top: -15px;
+}
 
-        .carousel-item {
-            height: 60vh;
-            background: #333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+.carousel-item 
+{
+    height: 80vh;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-        .carousel-item h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+.carousel-item h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
 
         .carousel-item h1 span {
             color: #ffcc00;
@@ -285,69 +296,6 @@ section
 }
 
 
-/*--------MEDIA QUERIES--------*/
-@media (max-width:991px) {
-    html {
-        font-size: 55%;
-    }
-    .header {
-        padding: 1.5rem 2rem;
-    }
-    #menu-btn {
-        display: inline-block;
-    }
-    .header .navbar {
-        position: absolute;
-        top: 105%;
-        right: -100%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-        transition: right 0.3s ease;
-    }
-    .header .navbar.active {
-        right: 0;
-    }
-    .header .navbar a {
-        color: var(--black);
-        display: block;
-        margin: 1.5rem;
-        padding: 0.5rem;
-        font-size: 2rem;
-    }
-    .header .search-form
-    {
-        width: 90%;
-        right: 2rem;
-    }
-    section
-    {
-    padding: 2rem ;
-    }
-    .home
-    {
-        background-position: left;
-        justify-content: center;
-        text-align: center;
-    }
-    .home .conten h3
-    {
-        font-size: 4.5rem;
-    }
-    .home .conten p
-    {
-        font-size: 4.5rem;
-    }
-}
-@media (max-width:450px) 
-{
-    html
-    {
-        font-size: 55%;
-    }
-}
-
-
 /*--------SECTION HOME--------*/
 .home 
 {
@@ -424,11 +372,12 @@ section
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
 }
-.menu .box-container .box
-{
-    padding: 5rem;
+.menu .box-container .box {
+    padding: 3rem;
     text-align: center;
     border: var(--border);
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 2); /* Menambahkan bayangan */
+    border-radius: 15px; /* Menambahkan sudut yang lebih tumpul */
 }
 .menu .box-container .box img
 {
@@ -436,8 +385,8 @@ section
 }
 .menu .box-container .box h3
 {
-    color: #fff;
-    font-size: 2rem;
+    color: black;
+    font-size: 3rem;
     padding: 1rem 0;
 }
 .menu .box-container .box .price
@@ -454,11 +403,7 @@ section
 }
 .menu .box-container .box:hover
 {
-    background: #ccc;
-}
-.menu .box-container .box:hover > *
-{
-    color: var(--black);
+    background: #ffcc00;
 }
 
 
@@ -727,6 +672,68 @@ section
 
 .footer .credit span {
     color: var(--main-color);
+}
+
+/*--------MEDIA QUERIES--------*/
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    #menu-btn {
+        display: inline-block;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 105%;
+        right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        transition: right 0.3s ease;
+    }
+    .header .navbar.active {
+        right: 0;
+    }
+    .header .navbar a {
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    .header .search-form
+    {
+        width: 90%;
+        right: 2rem;
+    }
+    section
+    {
+    padding: 2rem ;
+    }
+    .home
+    {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home .conten h3
+    {
+        font-size: 4.5rem;
+    }
+    .home .conten p
+    {
+        font-size: 4.5rem;
+    }
+}
+@media (max-width:450px) 
+{
+    html
+    {
+        font-size: 55%;
+    }
 }
     </style>
 </head>
