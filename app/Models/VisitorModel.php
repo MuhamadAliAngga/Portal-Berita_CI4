@@ -12,15 +12,21 @@ class VisitorModel extends Model
 
     public function incrementViewCount($id_artikel, $ip_address)
     {
-        $view = $this->where(['id_artikel' => $id_artikel, 'ip_address' => $ip_address])->first();
+        $startOfDay = date('Y-m-d 00:00:00');
+        $endOfDay = date('Y-m-d 23:59:59');
+
+        $view = $this->where(['id_artikel' => $id_artikel, 'ip_address' => $ip_address])
+            ->where('last_viewed >=', $startOfDay)
+            ->where('last_viewed <=', $endOfDay)
+            ->first();
 
         if ($view) {
-            // If the record exists, update the last_viewed timestamp
+            // If the record exists for today, update the last_viewed timestamp
             $this->set('last_viewed', 'CURRENT_TIMESTAMP', false)
                 ->where(['id_artikel' => $id_artikel, 'ip_address' => $ip_address])
                 ->update();
         } else {
-            // If the record doesn't exist, insert it
+            // If the record doesn't exist for today, insert it
             $this->insert(['id_artikel' => $id_artikel, 'ip_address' => $ip_address]);
         }
     }
