@@ -366,6 +366,39 @@ section
 
 
 /*--------SECTION MENU--------*/
+.menu .content {
+    display: flex;
+    align-items: center;
+}
+
+.conten
+{
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    background: url(/image/java.png) no-repeat;
+    background-size: 100%;  /* Ganti 'cover' dengan ukuran yang lebih kecil, seperti 50% */
+    background-position: center;  /* Ubah posisi menjadi 'center' untuk memastikan gambar berada di tengah */
+    padding: 3rem;
+    text-align: center;
+    border: var(--border);
+    box-shadow: 0 4px 8px rgba(0, 1, 1, 1); /* Menambahkan bayangan */
+    border-radius: 15px;
+}
+
+.menu .conten .quote {
+    flex-shrink: 0;
+    width: 150px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
+    height: auto;
+    margin-right: 20px; /* Ruang antara gambar dan teks */
+}
+
+.menu .conten p {
+    flex-grow: 1;
+    font-size: 2rem; /* Sesuaikan ukuran font teks sesuai kebutuhan */
+    line-height: 1.5;
+}
+
 .menu .box-container
 {
     display: grid;
@@ -378,6 +411,7 @@ section
     border: var(--border);
     box-shadow: 0 4px 8px rgba(1, 1, 1, 2); /* Menambahkan bayangan */
     border-radius: 15px; /* Menambahkan sudut yang lebih tumpul */
+    margin-top: 15px;
 }
 .menu .box-container .box img
 {

@@ -77,6 +77,12 @@
 <!--MENU SECTION STAR-->
 <section class="menu" id="menu">
     <h1 class="heading">Pemograman<span> II</span></h1>
+    <div class="conten">
+        <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya 
+            dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4 (CI4). 
+            Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara menghubungkannya dengan 
+            database yang telah dibuat.</p>
+    </div>
     <div class="box-container">
         <div class="box">
             <img src="/image/java.png" alt="" >
@@ -108,75 +114,81 @@
 
 
 <!--PRODUK SECTION START-->
-<section class="products" id="products">
-    <h1 class="heading">our <span>product</span></h1>
+<section class="menu" id="menu">
+    <h1 class="heading">Analisis<span>Data</span></h1>
+    <div class="conten">
+        <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya 
+            dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4 (CI4). 
+            Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara menghubungkannya dengan 
+            database yang telah dibuat.</p>
+    </div>
     <div class="box-container">
         <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="java.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$18.00 <span>$80.77</span></div>
-            </div>
+            <img src="/image/java.png" alt="" >
+            <h3>Pengenalan Framework</h3>
         </div>
         <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="java.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$18.00 <span>$80.77</span></div>
-            </div>
+            <img src="/image/java.png" alt="" >
+            <h3>Tentang CI4</h3>
         </div>
         <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="java.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$18.00 <span>$80.77</span></div>
-            </div>
+            <img src="/image/java.png" alt="" >
+            <h3>Instalasi</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Membuat Database</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Tutorial CI4</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Project</h3>
         </div>
     </div>
 </section>
 <!--PRODUK SECTION END-->
+
+
+<section class="menu" id="menu">
+    <h1 class="heading">Keamanan<span> Teknologi & Informasi</span></h1>
+    <div class="conten">
+        <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya 
+            dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4 (CI4). 
+            Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara menghubungkannya dengan 
+            database yang telah dibuat.</p>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Pengenalan Framework</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Tentang CI4</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Instalasi</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Membuat Database</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Tutorial CI4</h3>
+        </div>
+        <div class="box">
+            <img src="/image/java.png" alt="" >
+            <h3>Project</h3>
+        </div>
+    </div>
+</section>
+
+
 
 
 <!--REVIEW SECTION START-->
