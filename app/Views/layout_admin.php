@@ -133,11 +133,13 @@
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
+                    <?php if (session()->akses == 1): ?>                    
                     <li>
                         <a href="/penulis" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Penulis</span>
                         </a>
                     </li>
+                    <?php endif ?>
                     <li>
                         <a href="/artikel" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Artikel

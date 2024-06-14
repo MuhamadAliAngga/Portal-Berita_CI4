@@ -16,10 +16,12 @@ class Penulis extends BaseController
 
     public function index()
     {
+        $getProfil = session()->get('profil');
         $data = [
             'data' => $this->penulis->findAll(),
             'title' => 'Admin',
-            'subtitle' => 'Penulis'
+            'subtitle' => 'Penulis',
+            'profil' => $getProfil
         ];
         return view('penulis_view', $data);
     }

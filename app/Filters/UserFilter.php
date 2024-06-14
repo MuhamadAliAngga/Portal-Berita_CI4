@@ -45,7 +45,7 @@ class UserFilter implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         if (session()->akses == 2) {
-            return redirect()->to('/');
+            return redirect()->to('/dashboard');
         }
     }
 }
