@@ -18,10 +18,14 @@ $routes->post('/login/proses', 'Auth::login');
 //routes dashboard
 $routes->get('/dashboard', 'Home::index');
 
+
 //routes artikel
 $routes->get('/artikel', 'Artikel::index');
 $routes->get('/artikel/read/(:num)', 'Artikel::read/$1');
 $routes->get('/artikel/tambah', 'Artikel::tambah');
+
+$routes->get('/artikel/detail/(:num)', 'Beranda::read/$1');
+
 //rout proses artikel
 $routes->post('/artikel/uploadGambar', 'Artikel::uploadGambar');
 $routes->post('artikel/deleteGambar', 'Artikel::deleteGambar');

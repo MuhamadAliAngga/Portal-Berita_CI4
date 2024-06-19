@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARTIKEL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title><?= esc($title) ?></title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-
 :root
 {
     --main-color:#d3ad7f;
@@ -35,7 +34,7 @@
 html, body
 {
     font-size: 62.5%;
-    padding: 5%;
+    padding: 0%;
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
     background: #CFD8DC;
@@ -67,6 +66,7 @@ section
     letter-spacing: 2px; /* Menambahkan jarak antar huruf */
     line-height: 1.2; /* Menyesuaikan ketinggian baris */
 }
+
 .heading span {
     color: #ffcc00;
     text-transform: uppercase;
@@ -123,51 +123,6 @@ section
 {
     color: red;
 }
-
-
-/*--------CAROUSEL--------*/
-.carousel 
-{
-    margin-top: -15px;
-}
-
-.carousel-item 
-{
-    height: 80vh;
-    background: #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.carousel-item h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-        .carousel-item h1 span {
-            color: #ffcc00;
-        }
-
-        .carousel-item p {
-            font-size: 1.5rem;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: #000;
-            border-radius: 50%;
-        }
-
-        .carousel-indicators li {
-            background-color: #000;
-        }
-
-/*--------DIV NAVBAR--------*/
-
-
 
 
 /*--------DIV NAVBAR--------*/
@@ -244,195 +199,77 @@ section
 }
 
 
-/*--------DIV CART ITEM CONTAINER--------*/
-.header .cart-items-container {
-    position: absolute;
-    top: 105%;
-    right: -100%;
-    height: calc(100vh - 9.5rem);
-    width: 35rem;
-    background: #fff;
-    padding: 0 1.5rem;
-    overflow-y: auto; /* Tambahkan ini jika ingin scroll jika item banyak */
-}
-.header .cart-items-container.active
+/**------MAIN SECTION------**/
+main 
 {
-       right: 0;
-}
-.header .cart-items-container .cart-item {
-    position: relative;
-    margin: 2rem 0;
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.header .cart-items-container .cart-item .fa-times{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--black);
-}
-.header .cart-items-container .cart-item .fa-times:hover {
-    color: var(--main-color);
-}
-.header .cart-items-container .cart-item img
-{
-    height: 7rem;
-}
-.header .cart-items-container .cart-item .content h3
-{
-    font-size: 2rem;
-    color: var(--black);
-    padding-bottom: .5rem;
-}
-.header .cart-items-container .cart-item .content .price
-{
-    font-size: 1.5rem; 
-    color: var(--main-color);
-} 
-.header .cart-items-container .btn
-{
-    width: 100%;
-    text-align: center;
-}
-
-
-/*--------SECTION MENU--------*/
-.menu .content {
-    display: flex;
-    align-items: center;
-}
-
-.conten
-{
-    min-height: 30vh;
-    display: flex;
-    align-items: center;
-    background: url(/image/java.png) no-repeat;
-    background-size: 100%;  /* Ganti 'cover' dengan ukuran yang lebih kecil, seperti 50% */
-    background-position: center;  /* Ubah posisi menjadi 'center' untuk memastikan gambar berada di tengah */
-    padding: 3rem;
-    text-align: center;
-    border: var(--border);
-    box-shadow: 0 4px 8px rgba(0, 1, 1, 1); /* Menambahkan bayangan */
-    border-radius: 15px;
-}
-
-.menu .conten .quote {
-    flex-shrink: 0;
-    width: 150px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    height: auto;
-    margin-right: 20px; /* Ruang antara gambar dan teks */
-}
-
-.menu .conten p {
-    flex-grow: 1;
-    font-size: 2rem; /* Sesuaikan ukuran font teks sesuai kebutuhan */
-    line-height: 1.5;
-}
-
-.menu .box-container
-{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
-.menu .box-container .box {
-    padding: 3rem;
-    text-align: center;
-    border: var(--border);
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 2); /* Menambahkan bayangan */
-    border-radius: 15px; /* Menambahkan sudut yang lebih tumpul */
     margin-top: 15px;
+    padding: 7%;
+    
 }
-.menu .box-container .box img
-{
-    height: 10rem;
+main article h2 {
+    margin-bottom: 10px;
+    font-size: 4rem;
+    color: #0074D9;
 }
-.menu .box-container .box h3
-{
-    color: black;
+main article h3 {
+    margin-bottom: 10px;
     font-size: 3rem;
-    padding: 1rem 0;
+    color: #0074D9;
 }
-.menu .box-container .box .price
-{
-    color: #fff;
-    font-size: 2.5rem;
-    padding: .5rem 0;
-}
-.menu .box-container .box .price span
-{
+main article p {
+    margin-bottom: 10px;
+    line-height: 1.6;
     font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
 }
-.menu .box-container .box:hover
-{
-    background: #ffcc00;
+main .container1 article .meta {
+    margin-bottom: 10px;
+    color: white; 
+    font-size: 2rem; 
+    text-align: left; 
+    margin-left: 5px; 
+}
+main .container1 article .meta i {
+    margin-right: 5px; 
+
+}
+main .container2 article .meta {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.5rem;
+    text-align: 5px; 
+    margin-left: 5px; 
+}
+.container1 {
+    flex: 2; 
+    padding: 20px; 
+}
+.container2 {
+    flex: 1; 
+    padding: 20px; 
+    border: 2px solid grey; 
+    border-radius: 4px; 
+    margin-left: 20px; 
+}
+main article .red-box {
+    background: #1E90FF;
+    color: white;
+    padding: -10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 
-/*--------SECTION CONTACT--------*/
-.contact .row {
-    display: flex;
-    background: var(--black);
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.contact .row .map {
-    flex: 1 1 45rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.contact .row form {
-    flex: 1 1 45rem;
-    padding: 5rem 2rem;
-    text-align: center;
-}
-.contact .row form h3
-{
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color: #fff;
-}
-.contact .row form .inputBox {
-    display: flex;
-    align-items: center;
-    margin: 2rem;
-    margin-bottom: 2rem;
-    background: var(--bg);
-    border: var(--border);
-}
-.contact .row form .inputBox span {
-    color: #fff;
-    font-size: 2rem;
-    padding-left: 2rem;
-}
-.contact .row form .inputBox input {
-    width: 100%;
-    padding: 2rem;
-    font-size: 1.7rem;
-    color: #fff;
-    text-transform: none;
-    background: none;
-}
-
-
-/*--------SECTION FOOTER--------*/
-footer 
+/*--------FOOTER SECTION----------*/
+.footer 
 {
     background: #CFD8DC; 
-
+    padding: 0%;
     text-align: center;
     color: var(--black);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
 }
-footer .share 
+.footer .share 
 {
     padding: 1rem 0;
     display: flex;
@@ -441,7 +278,7 @@ footer .share
     background-color: #CFD8DC;
     color: #ffffff;
 }
-footer .share a 
+.footer .share a 
 {
     height: 5rem;
     width: 5rem;
@@ -456,13 +293,13 @@ footer .share a
     justify-content: center;
     transition: background-color( 0.3s, color 0.3s);
 }
-footer .share a:hover {
+.footer .share a:hover {
     background-color: #1E90FF;
     color: white;
     border: var(--borderr);
     
 }
-footer .links 
+.footer .links 
 {
     display: flex;
     justify-content: center;
@@ -472,7 +309,7 @@ footer .links
     background-color: #CFD8DC; /* Warna abu-abu tua */
     color: #ffffff;
 }
-footer .links a 
+.footer .links a 
 {
     padding: 0.5rem 2rem;
     color: #0074D9; /* Warna teks hitam */
@@ -480,13 +317,13 @@ footer .links a
     font-size: 2rem;
     transition: background-color 0.3s, color 0.3s;
 }
-footer .links a:hover 
+.footer .links a:hover 
 {
     background-color: #1E90FF;
     color: white;
     border: var(--borderr);
 }
-footer .credit 
+.footer .credit 
 {
     font-size: 2rem;
     background-color: #CFD8DC;/* Warna abu-abu tua */
@@ -495,21 +332,17 @@ footer .credit
     font-weight: lighter;
     padding: 1.5rem 0;
 }
-footer .credit span 
+.footer .credit span 
 {
     color: #1E90FF;
 }
 
-/*--------MEDIA QUERIES--------*/
 @media (max-width:991px) {
     html {
         font-size: 55%;
     }
     .header {
         padding: 1.5rem 2rem;
-    }
-    #menu-btn {
-        display: inline-block;
     }
     .header .navbar {
         position: absolute;
@@ -535,24 +368,6 @@ footer .credit span
         width: 90%;
         right: 2rem;
     }
-    section
-    {
-    padding: 2rem ;
-    }
-    .home
-    {
-        background-position: left;
-        justify-content: center;
-        text-align: center;
-    }
-    .home .conten h3
-    {
-        font-size: 4.5rem;
-    }
-    .home .conten p
-    {
-        font-size: 4.5rem;
-    }
 }
 @media (max-width:450px) 
 {
@@ -561,20 +376,89 @@ footer .credit span
         font-size: 55%;
     }
 }
-    </style>
-</head>
+</style>
+
 
 <body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="java.png" alt="Logo Java">
+        </a>
 
+        <h1>Dunia<span>Coding</span></h1>
 
-        <?= $this->renderSection('content') ?>
+        <nav class="navbar">
+            <a href="">Smester 1</a>
+            <a href="">Smester 2</a>
+            <a href="">Smester 3</a>
+            <a href="">Smester 4</a>
+            <a href="">Smester 5</a>
+            <a href="">Smester 6</a>
+            <a href="">Smester 7</a>
+            <a href="">Smester 8</a>
+        </nav>
+        <div class="icon ">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
 
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    </header>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <main>
+    <div class="container1">
+        <article>
+            <h2><?= $artikel['judul'] ?></h2>
+            <div class="red-box">
+                <p class="meta">
+                    <i class="fas fa-user"></i> <?= $artikel['nama_lengkap'] ?>
+                    <i class="fas fa-calendar-alt"></i> 
+                    <time datetime="2024-06-14"> <?= $artikel['tanggal_dibuat'] ?></time>
+                </p>
+            </div>
+          <?= $artikel['isi'] ?>
+            
+        </article>
+    </div>
 
+    <div class="container2">
+        <article>
+            <h2>10 Cara Membuat Kanjut Anda Badag, Kuat Dan Tahan Lama</h2>
+            <div class="red-box">
+                <p class="meta">
+                    <i class="fas fa-user"></i> By Khairull Azzam Firmansyah     
+                    <i class="fas fa-calendar-alt"> </i> 
+                    <time datetime="2024-06-14">14 Juni 2024</time>
+                </p>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis quam sit amet vehicula tincidunt. Sed non purus nulla. Nullam at neque vel lectus condimentum venenatis. Maecenas at ultricies lorem.</p>
+            <p>Proin convallis, mauris in tincidunt lacinia, lacus sapien consectetur nunc, in vulputate est purus ut lacus. Curabitur auctor, risus ut condimentum consequat, lectus felis sagittis elit, sed tincidunt velit ligula at dui.</p>
+            <p>Morbi fermentum felis a nulla sodales, at auctor purus vehicula. Cras a metus at ligula euismod blandit vel ac justo. Sed eu risus a metus consectetur tincidunt.</p>
+        </article>
+    </div>
+</main>
+
+    <footer class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Product</a>
+            <a href="#">Review</a>
+            <a href="#">Contact</a>
+            <a href="#">Blogs</a>
+        </div>
+        <div class="credit">created by <span>Aryo FF</span></div>
+    </footer>
 </body>
-
 </html>
-

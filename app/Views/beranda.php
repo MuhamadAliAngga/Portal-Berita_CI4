@@ -86,36 +86,20 @@
                 database yang telah dibuat.</p>
         </div>
         <div class="box-container">
+            <?php foreach($artikel_all as $row ): ?>
+                <a href="/artikel/detail/<?= $row->id_artikel ?>">
             <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Pengenalan Framework</h3>
+                <img src="<?= base_url("image/thumbnail/").$row->thumbnail?>" alt="">
+                <h3><?= $row->judul ?></h3>
             </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tentang CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Instalasi</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Membuat Database</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tutorial CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Project</h3>
-            </div>
+            </a>
+            <?php endforeach ?>
         </div>
     </section>
     <!--MENU SECTION END-->
 
 
-    <!--PRODUK SECTION START-->
+    <!--PRODUK SECTION START
     <section class="menu" id="menu">
         <h1 class="heading">Analisis<span>Data</span></h1>
         <div class="conten">
@@ -153,9 +137,9 @@
             </div>
         </div>
     </section>
-    <!--PRODUK SECTION END-->
+    PRODUK SECTION END-->
 
-
+    <!--PRODUK SECTION START
     <section class="menu" id="menu">
         <h1 class="heading">Keamanan<span> Teknologi & Informasi</span></h1>
         <div class="conten">
@@ -193,77 +177,13 @@
             </div>
         </div>
     </section>
-
-
-
-
-    <!--REVIEW SECTION START-->
-    <section class="review" id="review">
-        <h1 class="heading">customer <span>review</span></h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="java.png" alt="" class="quote">
-                <p>jjbjh hhdbsfhf sdf dfv dfv sdfv sdfv sdf vsdf vsd vsdvsdgb db sfdbg sf bgs b sdg bdg bsd gb sdb sdgb
-                    sdg bsd gb sd
-                    dfb sdgbf sdb sd bsdbsd bds bd sb sdgbdgbcdf bvaeds df vsdfse rg se sdf vsd fvsts dfv sdfv sdvs f
-                    sdf sdf sdfv sdf vsdf
-                    dfv sdf sdf vsdf vsd vdfvv </p>
-                <img src="java.png" alt="" class="user">
-                <h3>jhon shon</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-            <div class="box">
-                <img src="java.png" alt="" class="quote">
-                <p>jjbjh hhdbsfhf sdf dfv dfv sdfv sdfv sdf vsdf vsd vsdvsdgb db sfdbg sf bgs b sdg bdg bsd gb sdb sdgb
-                    sdg bsd gb sd
-                    dfb sdgbf sdb sd bsdbsd bds bd sb sdgbdgbcdf bvaeds df vsdfse rg se sdf vsd fvsts dfv sdfv sdvs f
-                    sdf sdf sdfv sdf vsdf
-                    dfv sdf sdf vsdf vsd vdfvv </p>
-                <img src="java.png" alt="" class="user">
-                <h3>jhon shon</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-            <div class="box">
-                <img src="java.png" alt="" class="quote">
-                <p>jjbjh hhdbsfhf sdf dfv dfv sdfv sdfv sdf vsdf vsd vsdvsdgb db sfdbg sf bgs b sdg bdg bsd gb sdb sdgb
-                    sdg bsd gb sd
-                    dfb sdgbf sdb sd bsdbsd bds bd sb sdgbdgbcdf bvaeds df vsdfse rg se sdf vsd fvsts dfv sdfv sdvs f
-                    sdf sdf sdfv sdf vsdf
-                    dfv sdf sdf vsdf vsd vdfvv </p>
-                <img src="java.png" alt="" class="user">
-                <h3>jhon shon</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--REVIEW SECTION END-->
+     PRODUK SECTION END-->
 
 
     <!--CONTACT SECTION START-->
     <section class="contact" id="contact">
         <h1 class="heading"><span>contact</span> us</h1>
         <div class="row">
-            <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63446.25087615887!2d106.47896286198467!3d-6.343422823357335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e420831a08f0f57%3A0x3d08fd03799a5d69!2sSuka%20Manah%2C%20Kec.%20Jambe%2C%20Kabupaten%20Tangerang%2C%20Banten!5e0!3m2!1sid!2sid!4v1717254495516!5m2!1sid!2sid"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <form action="">
                 <h3>get in touch</h3>
                 <div class="inputBox">
@@ -286,7 +206,7 @@
 
 
     <!--FOOTER SECTION START-->
-    <section class="footer">
+<footer>
         <div class="share">
             <a href="#" class="fab fa-facebook"></a>
             <a href="#" class="fab fa-twitter"></a>
@@ -304,7 +224,7 @@
             <a href="#">Blogs</a>
         </div>
         <div class="credit">created by <span>Aryo FF</span></div>
-    </section>
+</footer>
     <!--FOOTER SECTION END-->
     <script>
         let cartItem = document.querySelector('.cart-items-container');
