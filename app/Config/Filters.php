@@ -74,10 +74,10 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             'AdminFilter' => [
-                'except' => ['login/*', 'login', '/']
+                'except' => ['login/*', 'login', '/', 'artikel/detail/*']
             ],
             'UserFilter' => [
-                'except' => ['login/*', 'login', '/']
+                'except' => ['login/*', 'login', '/', 'artikel/detail/*']
             ],
         ],
         'after' => [
