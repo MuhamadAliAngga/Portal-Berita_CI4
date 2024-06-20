@@ -18,7 +18,7 @@ class Penulis extends BaseController
     {
         $getProfil = session()->get('profil');
         $data = [
-            'data' => $this->penulis->findAll(),
+            'data' => $this->penulis->getPenulis(),
             'title' => 'Admin',
             'subtitle' => 'Penulis',
             'profil' => $getProfil

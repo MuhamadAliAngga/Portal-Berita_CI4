@@ -22,20 +22,19 @@ class Home extends BaseController
     public function index(): string
     {
         $getProfil = session()->get('profil');
+        $totalViewsData = $this->visitor->getTotalViews();
+        $totalViewsTodayData = $this->visitor->getTotalViewsToday();
+
         $data = [
             'title' => 'Admin',
             'subtitle' => 'Dashboard',
             'profil' => $getProfil, 
             'totalArtikel' => $this->artikel->get()->getNumRows(),
-            'totalProfil' => $this->artikel->get()->getNumRows()
+            'totalProfil' => $this->artikel->get()->getNumRows(),
+            'totalViews' => $totalViewsData,
+            'totalViewsToday' => $totalViewsTodayData
         ];
-
-        $totalViewsData = $this->visitor->getTotalViews();
-        $data['totalViews'] = $totalViewsData['total_unique_views'] ?? 0;
-
-        $totalViewsTodayData = $this->visitor->getTotalViewsToday();
-        $data['totalViewsToday'] = $totalViewsTodayData['total_unique_views_today'] ?? 0;
-
+        
         return view('dashboard', $data);
     }
 }

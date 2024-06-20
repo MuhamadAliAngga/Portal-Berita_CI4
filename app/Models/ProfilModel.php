@@ -15,5 +15,12 @@ class ProfilModel extends Model
         return $this->where('id_user', $userId)->first();
     }
     
+    public function getPenulis()
+    {
+        return $this->join('user', 'profil.id_user = user.id_user')
+            ->where('akses', 2)
+            ->get()
+            ->getResult();
+    }
 }
 

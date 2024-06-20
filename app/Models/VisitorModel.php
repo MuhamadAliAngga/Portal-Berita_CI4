@@ -39,17 +39,17 @@ class VisitorModel extends Model
 
     public function getTotalViews()
     {
-        return $this->select('COUNT(DISTINCT ip_address) as total_unique_views')
-            ->first();
+        return $this->get()
+            ->getNumRows();
     }
 
     public function getTotalViewsToday()
     {
-        $startOfDay = date('Y-m-d 00:00:00');
-        $endOfDay = date('Y-m-d 23:59:59');
-        return $this->select('COUNT(DISTINCT ip_address) as total_unique_views_today')
-            ->where('last_viewed >=', $startOfDay)
-            ->where('last_viewed <=', $endOfDay)
-            ->first();
+        $startDate = '2024-06-20 00:00:00';
+        $endDate = '2024-06-20 23:59:59';
+        return $this->select('*')
+            ->where('last_viewed >=', $startDate)
+            ->where('last_viewed <=', $endDate)
+            ->get()->getNumRows();;
     }
 }
