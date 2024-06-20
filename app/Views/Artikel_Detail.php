@@ -433,6 +433,7 @@
                         <i class="fas fa-user"></i> <?= $artikel['nama_lengkap'] ?>
                         <i class="fas fa-calendar-alt"></i>
                         <time datetime="2024-06-14"> <?= $artikel['tanggal_dibuat'] ?></time>
+                        <i class="fas fa-eye"></i><?= $view_count ?>
                     </p>
                 </div>
                 <?= $artikel['isi'] ?>

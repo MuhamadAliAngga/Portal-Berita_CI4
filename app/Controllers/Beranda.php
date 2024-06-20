@@ -28,6 +28,7 @@ class Beranda extends BaseController
     public function read($id)
     {
         $getProfil = session()->get('profil');
+        $viewData = $this->visitor->getViewCount($id);
         $data = [
             'artikel' => $this->artikel->readArtikel()->find($id),
             'title' => 'Admin',
@@ -39,8 +40,7 @@ class Beranda extends BaseController
 
             $this->visitor->incrementViewCount($id, $ip_address);
 
-            $viewData = $this->visitor->getViewCount($id);
-            $data['view_count'] = $viewData['unique_views'] ?? 0;
+            $data['view_count'] = $viewData;
 
             return view('Artikel_Detail', $data);
         } else {
