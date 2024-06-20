@@ -33,9 +33,8 @@ class VisitorModel extends Model
 
     public function getViewCount($id_artikel)
     {
-        return $this->select('COUNT(DISTINCT ip_address) as unique_views')
-            ->where('id_artikel', $id_artikel)
-            ->first();
+        return $this->where('id_artikel', $id_artikel)
+            ->get()->getNumRows();
     }
 
     public function getTotalViews()

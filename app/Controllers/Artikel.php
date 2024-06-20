@@ -47,7 +47,7 @@ class Artikel extends BaseController
             $this->visitor->incrementViewCount($id, $ip_address);
 
             $viewData = $this->visitor->getViewCount($id);
-            $data['view_count'] = $viewData['unique_views'] ?? 0;
+            $data['view_count'] = $viewData;
 
             return view('artikel_read', $data);
         } else {
