@@ -98,7 +98,7 @@ class Artikel extends BaseController
         $filename = $thumbnail->getRandomName();
         $thumbnail->move(ROOTPATH . 'public/image/thumbnail/', $filename);
         $currentDate = (new \DateTime())->format('Y-m-d');
-        
+
         $data = [
             'id_profil' => $this->request->getPost('id_profil'),
             'judul' => $this->request->getPost('judul'),
@@ -108,7 +108,7 @@ class Artikel extends BaseController
             'tanggal_dibuat' => $currentDate
         ];
         $this->artikel->insert($data);
-        
+
         session()->setFlashdata('berhasil', 'Data artikel berhasil ditambah!!');
         return redirect()->to(site_url('/artikel'));
     }

@@ -5,21 +5,18 @@
 
 <body>
     <header class="header">
-        <a href="#" class="logo">
-            <img src="/image/java.png" alt="Logo Java">
+        <a href="/" class="logo">
+            <img src="/image/logo.png" alt="Logo Java">
         </a>
-
-        <h1>Dunia<span>Coding</span></h1>
-
         <nav class="navbar">
-            <a href="#home">Smester 1</a>
-            <a href="#about">Smester 2</a>
-            <a href="#menu">Smester 3</a>
-            <a href="#product">Smester 4</a>
-            <a href="#review">Smester 5</a>
-            <a href="#contact">Smester 6</a>
-            <a href="#blogs">Smester 7</a>
-            <a href="#blogs">Smester 8</a>
+            <a href="#home">Home</a>
+            <a href="#menu">Pemrograman</a>
+            <a href="#menu">Keamanan Teknologi</a>
+            <a href="#product">Seni</a>
+            <a href="#review">Religi</a>
+            <a href="#blogs">Gosip Mahasiswa</a>
+            <a href="#blogs">Profil</a>
+            <a href="#contact">Contact</a>
         </nav>
         <div class="icon ">
             <div class="fas fa-search" id="search-btn"></div>
@@ -76,7 +73,7 @@
 
     <!--MENU SECTION STAR-->
     <section class="menu" id="menu">
-        <h1 class="heading">Pemograman<span> II</span></h1>
+        <h1 class="heading">Cedeigniter<span> 4</span></h1>
         <div class="conten">
             <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya
                 dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4
@@ -86,13 +83,13 @@
                 database yang telah dibuat.</p>
         </div>
         <div class="box-container">
-            <?php foreach($artikel_all as $row ): ?>
+            <?php foreach ($artikel_all as $row) : ?>
                 <a href="/artikel/detail/<?= $row->id_artikel ?>">
-            <div class="box">
-                <img src="<?= base_url("image/thumbnail/").$row->thumbnail?>" alt="">
-                <h3><?= $row->judul ?></h3>
-            </div>
-            </a>
+                    <div class="box">
+                        <img src="<?= base_url("image/thumbnail/") . $row->thumbnail ?>" alt="">
+                        <h3><?= $row->judul ?></h3>
+                    </div>
+                </a>
             <?php endforeach ?>
         </div>
     </section>
@@ -206,7 +203,7 @@
 
 
     <!--FOOTER SECTION START-->
-<footer>
+    <footer>
         <div class="share">
             <a href="#" class="fab fa-facebook"></a>
             <a href="#" class="fab fa-twitter"></a>
@@ -215,16 +212,16 @@
             <a href="#" class="fab fa-pinterest"></a>
         </div>
         <div class="links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Product</a>
-            <a href="#">Review</a>
-            <a href="#">Contact</a>
-            <a href="#">Blogs</a>
+            <a href="/">Home</a>
+            <a href="#menu">Pemrograman</a>
+            <a href="#menu">Keamanan Teknologi</a>
+            <a href="#product">Seni</a>
+            <a href="#review">Religi</a>
+            <a href="#blogs">Gosip Mahasiswa</a>
+            <a href="#blogs">Profil</a>
         </div>
         <div class="credit">created by <span>Aryo FF</span></div>
-</footer>
+    </footer>
     <!--FOOTER SECTION END-->
     <script>
         let cartItem = document.querySelector('.cart-items-container');
@@ -261,7 +258,6 @@
             searchForm.classList.remove('active');
             cartItem.classList.remove('active');
         }
-
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
