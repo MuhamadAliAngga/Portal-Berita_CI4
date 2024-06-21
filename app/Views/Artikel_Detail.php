@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ARTIKEL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
@@ -212,65 +215,50 @@
 
     }
 
-    main article h2 {
-        margin-bottom: 10px;
-        font-size: 4rem;
-        color: #0074D9;
-    }
+    .container {
+            width: calc(100% - 40px);
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-    main article h3 {
-        margin-bottom: 10px;
-        font-size: 3rem;
-        color: #0074D9;
-    }
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .container img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
 
-    main article p {
-        margin-bottom: 10px;
-        line-height: 1.6;
-        font-size: 1.5rem;
-    }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 2rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
 
-    main .container1 article .meta {
-        margin-bottom: 10px;
-        color: white;
-        font-size: 2rem;
-        text-align: left;
-        margin-left: 5px;
-    }
+        .meta i {
+            margin-right: 5px;
+        }
 
-    main .container1 article .meta i {
-        margin-right: 5px;
+        .content {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #444;
+        }
 
-    }
+        .content p {
+            margin-bottom: 1.5rem;
+        }
 
-    main .container2 article .meta {
-        margin-bottom: 10px;
-        color: white;
-        font-size: 1.5rem;
-        text-align: 5px;
-        margin-left: 5px;
-    }
-
-    .container1 {
-        flex: 2;
-        padding: 20px;
-    }
-
-    .container2 {
-        flex: 1;
-        padding: 20px;
-        border: 2px solid grey;
-        border-radius: 4px;
-        margin-left: 20px;
-    }
-
-    main article .red-box {
-        background: #1E90FF;
-        color: white;
-        padding: -10px;
-        border-radius: 6px;
-        margin-bottom: 20px;
-    }
 
 
     /*--------FOOTER SECTION----------*/
@@ -425,32 +413,18 @@
     </header>
 
     <main>
-        <div class="container1">
+        <div class="container">
+            <h1><?= $artikel['judul'] ?></h1>
+            <img src="<?= base_url('image/thumbnail/') . $artikel['thumbnail'] ?>" alt="Thumbnail">
+            <div class="meta">
+                <span><i class="fas fa-user"></i> <?= $artikel['nama_lengkap'] ?></span>
+                <span><i class="fas fa-calendar-alt"></i> <?= $artikel['tanggal_dibuat'] ?></span>
+                <span><i class="fas fa-eye"></i> <?= $view_count ?> Views</span>
+            </div>
             <article>
-                <h2><?= $artikel['judul'] ?></h2>
-                <div class="red-box">
-                    <p class="meta">
-                        <i class="fas fa-user"></i> <?= $artikel['nama_lengkap'] ?>
-                        <i class="fas fa-calendar-alt"></i>
-                        <time datetime="2024-06-14"> <?= $artikel['tanggal_dibuat'] ?></time>
-                        <i class="fas fa-eye"></i><?= $view_count ?>
-                    </p>
+                <div class="content">
+                    <?= $artikel['isi'] ?>
                 </div>
-                <?= $artikel['isi'] ?>
-            </article>
-        </div>
-
-        <div class="container2">
-            <article>
-                <h2><?= $artikel['judul'] ?></h2>
-                <div class="red-box">
-                    <p class="meta">
-                        <i class="fas fa-user"></i> <?= $artikel['nama_lengkap'] ?>
-                        <i class="fas fa-calendar-alt"></i>
-                        <time datetime="2024-06-14"> <?= $artikel['tanggal_dibuat'] ?></time>
-                    </p>
-                </div>
-                <?= $artikel['isi'] ?>
             </article>
         </div>
     </main>
