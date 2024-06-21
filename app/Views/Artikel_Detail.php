@@ -63,25 +63,17 @@
         padding-bottom: 3.5rem;
         font-size: 4rem;
         font-weight: bold;
-        /* Menambahkan tebal pada teks */
         font-family: 'Roboto', sans-serif;
-        ;
-        /* Contoh jenis font yang menarik */
         letter-spacing: 2px;
-        /* Menambahkan jarak antar huruf */
         line-height: 1.2;
-        /* Menyesuaikan ketinggian baris */
     }
 
     .heading span {
         color: #ffcc00;
         text-transform: uppercase;
-        font-weight: bold;
         font-family: 'Roboto', sans-serif;
-        ;
-        /* Memilih jenis font yang sama */
+        font-weight: bold;
         letter-spacing: 1px;
-        /* Menyesuaikan jarak antar huruf */
     }
 
     .btn {
@@ -102,7 +94,6 @@
     /*--------HEADER--------*/
     .header {
         background-color: #CFD8DC;
-        /* Warna abu-abu tua */
         color: #ffffff;
         display: flex;
         align-items: center;

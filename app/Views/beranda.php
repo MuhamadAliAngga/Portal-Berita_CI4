@@ -4,40 +4,40 @@
 
 
 <body>
-    <header class="header">
-        <a href="/" class="logo">
-            <img src="/image/logo.png" alt="Logo Java">
-        </a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#menu">Pemrograman</a>
-            <a href="#menu">Keamanan Teknologi</a>
-            <a href="#product">Seni</a>
-            <a href="#review">Religi</a>
-            <a href="#blogs">Gosip Mahasiswa</a>
-            <a href="#blogs">Profil</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="icon ">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
+<!--HEADER SECTION START-->
+<header class="header">
+    <a href="/" class="logo">
+        <img src="/image/logo.png" alt="Logo Java">
+    </a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#menu">Pemrograman</a>
+        <a href="#menu">Keamanan Teknologi</a>
+        <a href="#product">Seni</a>
+        <a href="#review">Religi</a>
+        <a href="#blogs">Gosip Mahasiswa</a>
+        <a href="#blogs">Profil</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="icon ">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+</header>
+<!--HEADER SECTION END-->
 
-        <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </div>
-    </header>
-    <!--HEADER SECTION END-->
 
-
-    <!--HOME SECTION START-->
-    <section id="home">
+<!--HOME SECTION START-->
+<section id="carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -69,120 +69,35 @@
             </a>
         </div>
     </section>
-    <!--HOME SECTION ENDS-->
+<!--HOME SECTION ENDS-->
 
-    <!--MENU SECTION STAR-->
-    <section class="menu" id="menu">
-        <h1 class="heading">Cedeigniter<span> 4</span></h1>
-        <div class="conten">
-            <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya
-                dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4
-                (CI4).
-                Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara
-                menghubungkannya dengan
-                database yang telah dibuat.</p>
-        </div>
-        <div class="box-container">
-            <?php foreach ($artikel_all as $row) : ?>
-                <a href="/artikel/detail/<?= $row->id_artikel ?>">
-                    <div class="box">
-                        <img src="<?= base_url("image/thumbnail/") . $row->thumbnail ?>" alt="">
-                        <h3><?= $row->judul ?></h3>
-                    </div>
-                </a>
-            <?php endforeach ?>
-        </div>
-    </section>
-    <!--MENU SECTION END-->
+<!--MENU SECTION STAR-->
+<section class="blogs" id="blogs">
+    <h1 class="heading">CodeIgniter<span> 4</span></h1>
+    <div class="box-container">
+    <?php foreach ($artikel_all as $row) : ?>
+        <a href="/artikel/detail/<?= $row->id_artikel ?>">
+            <div class="box">
+                <div class="image">
+                    <img src="<?= base_url("image/thumbnail/") . $row->thumbnail ?>" alt="">
+                </div>
+                <div class="content">
+                    <h3><?= $row->judul ?></h3>
+                </div>
+            </div>
+        </a> 
+    <?php endforeach ?> 
+    </div>
+</section>
+<!--MENU SECTION END-->
 
-
-    <!--PRODUK SECTION START
-    <section class="menu" id="menu">
-        <h1 class="heading">Analisis<span>Data</span></h1>
-        <div class="conten">
-            <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya
-                dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4
-                (CI4).
-                Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara
-                menghubungkannya dengan
-                database yang telah dibuat.</p>
-        </div>
-        <div class="box-container">
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Pengenalan Framework</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tentang CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Instalasi</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Membuat Database</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tutorial CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Project</h3>
-            </div>
-        </div>
-    </section>
-    PRODUK SECTION END-->
-
-    <!--PRODUK SECTION START
-    <section class="menu" id="menu">
-        <h1 class="heading">Keamanan<span> Teknologi & Informasi</span></h1>
-        <div class="conten">
-            <p>Dalam mata kuliah pemrograman II ini, kita akan mempelajari konsep framework, fungsinya, dan kegunaannya
-                dalam pengembangan perangkat lunak. Framework yang digunakan dalam mata kuliah ini adalah CodeIgniter 4
-                (CI4).
-                Pembahasan meliputi pengertian, fungsi, dan manfaat CI4, serta panduan instalasi dan cara
-                menghubungkannya dengan
-                database yang telah dibuat.</p>
-        </div>
-        <div class="box-container">
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Pengenalan Framework</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tentang CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Instalasi</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Membuat Database</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Tutorial CI4</h3>
-            </div>
-            <div class="box">
-                <img src="/image/java.png" alt="">
-                <h3>Project</h3>
-            </div>
-        </div>
-    </section>
-     PRODUK SECTION END-->
 
 
     <!--CONTACT SECTION START-->
     <section class="contact" id="contact">
-        <h1 class="heading"><span>contact</span> us</h1>
+        <h1 class="heading">Contact<span> Us</span></h1>
         <div class="row">
             <form action="">
-                <h3>get in touch</h3>
                 <div class="inputBox">
                     <span class="fas fa-user"></span>
                     <input type="text" placeholder="name">
@@ -195,7 +110,7 @@
                     <span class="fas fa-phone"></span>
                     <input type="number" placeholder="number">
                 </div>
-                <input class="btn" type="submit" value="contact now">
+                <input class="btn" type="submit" value="Contact Now">
             </form>
         </div>
     </section>
@@ -203,7 +118,7 @@
 
 
     <!--FOOTER SECTION START-->
-    <footer>
+    <footer class="footer">
         <div class="share">
             <a href="#" class="fab fa-facebook"></a>
             <a href="#" class="fab fa-twitter"></a>
@@ -213,14 +128,14 @@
         </div>
         <div class="links">
             <a href="/">Home</a>
-            <a href="#menu">Pemrograman</a>
+            <a href="/">Pemrograman</a>
             <a href="#menu">Keamanan Teknologi</a>
             <a href="#product">Seni</a>
             <a href="#review">Religi</a>
             <a href="#blogs">Gosip Mahasiswa</a>
             <a href="#blogs">Profil</a>
         </div>
-        <div class="credit">created by <span>Aryo FF</span></div>
+        <div class="credit">Created By <span>Aryo FF</span></div>
     </footer>
     <!--FOOTER SECTION END-->
     <script>

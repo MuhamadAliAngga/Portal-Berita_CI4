@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title><?= esc($title) ?></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root
 {
@@ -28,14 +27,12 @@
     box-sizing: border-box;
     outline: none;
     border: none;
-    text-decoration: none;
-    text-transform: capitalize;
     transition: .2s linear;
 }
 html, body
 {
     font-size: 62.5%;
-    padding: 5%;
+    padding: 0%;
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
     background: #CFD8DC;
@@ -53,25 +50,25 @@ html::-webkit-scrollbar-thumb
 
 section
 {
-    padding: 3rem ;
+        padding: 9%;
 }
 
 .heading {
+    margin-top: -150px;
     text-align: center;
     color: black;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
+    padding-bottom: 3rem;
     font-size: 4rem;
     font-weight: bold; /* Menambahkan tebal pada teks */
-    font-family: 'Roboto', sans-serif;; /* Contoh jenis font yang menarik */
+    font-family: 'Times New Roman', Times, serif;
     letter-spacing: 2px; /* Menambahkan jarak antar huruf */
-    line-height: 1.2; /* Menyesuaikan ketinggian baris */
+    line-height: 1; /* Menyesuaikan ketinggian baris */
 }
 .heading span {
-    color: #ffcc00;
-    text-transform: uppercase;
+    color: #0074D9;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;; /* Memilih jenis font yang sama */
+    font-weight: bold; /* Menambahkan tebal pada teks */
+    font-family: 'Times New Roman', Times, serif;
     letter-spacing: 1px; /* Menyesuaikan jarak antar huruf */
 }
 
@@ -81,20 +78,22 @@ section
     display: inline-block;
     padding:.9rem 3rem;
     font-size: 1.7rem;
+    font-family: 'Times New Roman', Times, serif;
     color: #fff;
-    background: red;
+    background: #0074D9;
     cursor: pointer;
 }
 .btn:hover
 {
-   letter-spacing: .2rem; 
+   background: #1E90FF;
+   color: #fff; 
 }
 
 
 /*--------HEADER--------*/
 .header 
 {
-    background-color: #CFD8DC; /* Warna abu-abu tua */
+    background-color: #CFD8DC;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -123,65 +122,58 @@ section
 {
     color: red;
 }
+/*--------HEADER--------*/
 
 
 /*--------CAROUSEL--------*/
-.carousel 
-{
-    margin-top: -15px;
-}
-
-.carousel-item 
-{
-    height: 80vh;
-    background: #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.carousel-item h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
+.carousel {
+            margin-top: -15px;
+        }
+        .carousel-item {
+            height: 80vh;
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .carousel-item h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
         .carousel-item h1 span {
             color: #ffcc00;
         }
-
         .carousel-item p {
             font-size: 1.5rem;
         }
-
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             background-color: #000;
             border-radius: 50%;
         }
-
         .carousel-indicators li {
             background-color: #000;
         }
+/*--------CAROUSEL--------*/
+
+
+
 
 /*--------DIV NAVBAR--------*/
-
-
-
-
-/*--------DIV NAVBAR--------*/
-.header .navbar 
-{
-    margin-left: 20px; 
+.header .navbar {
+    margin-left: 20px;
     justify-content: flex-end;
+    font-weight: bold; /* Menambahkan tebal pada teks */
+    font-family: 'Times New Roman', Times, serif;
 }
-.header .navbar a 
-{
+.header .navbar a {
     margin: 1rem;
     font-size: 1.6rem;
     color: #0074D9;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -244,136 +236,70 @@ section
 }
 
 
-/*--------DIV CART ITEM CONTAINER--------*/
-.header .cart-items-container {
-    position: absolute;
-    top: 105%;
-    right: -100%;
-    height: calc(100vh - 9.5rem);
-    width: 35rem;
-    background: #fff;
-    padding: 0 1.5rem;
-    overflow-y: auto; /* Tambahkan ini jika ingin scroll jika item banyak */
-}
-.header .cart-items-container.active
-{
-       right: 0;
-}
-.header .cart-items-container .cart-item {
-    position: relative;
-    margin: 2rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.header .cart-items-container .cart-item .fa-times{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--black);
-}
-.header .cart-items-container .cart-item .fa-times:hover {
-    color: var(--main-color);
-}
-.header .cart-items-container .cart-item img
-{
-    height: 7rem;
-}
-.header .cart-items-container .cart-item .content h3
-{
-    font-size: 2rem;
-    color: var(--black);
-    padding-bottom: .5rem;
-}
-.header .cart-items-container .cart-item .content .price
-{
-    font-size: 1.5rem; 
-    color: var(--main-color);
-} 
-.header .cart-items-container .btn
-{
-    width: 100%;
-    text-align: center;
-}
-
 
 /*--------SECTION MENU--------*/
-.menu .content {
-    display: flex;
-    align-items: center;
-}
-
-.conten
+.blogs .box-container
 {
-    min-height: 30vh;
-    display: flex;
-    align-items: center;
-    background: url(/image/java.png) no-repeat;
-    background-size: 100%;  /* Ganti 'cover' dengan ukuran yang lebih kecil, seperti 50% */
-    background-position: center;  /* Ubah posisi menjadi 'center' untuk memastikan gambar berada di tengah */
-    padding: 3rem;
-    text-align: center;
-    border: var(--border);
-    box-shadow: 0 4px 8px rgba(0, 1, 1, 1); /* Menambahkan bayangan */
-    border-radius: 15px;
-}
-
-.menu .conten .quote {
-    flex-shrink: 0;
-    width: 150px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    height: auto;
-    margin-right: 20px; /* Ruang antara gambar dan teks */
-}
-
-.menu .conten p {
-    flex-grow: 1;
-    font-size: 2rem; /* Sesuaikan ukuran font teks sesuai kebutuhan */
-    line-height: 1.5;
-}
-
-.menu .box-container
-{
+    margin-top: -15px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
 }
-.menu .box-container .box {
+.blogs .box-container .box
+{
     padding: 3rem;
     text-align: center;
-    border: var(--border);
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 2); /* Menambahkan bayangan */
-    border-radius: 15px; /* Menambahkan sudut yang lebih tumpul */
+    border: grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    border-radius: 5px;
     margin-top: 15px;
 }
-.menu .box-container .box img
+.blogs .box-container .box:hover
 {
-    height: 10rem;
+    background: #0074D9;
 }
-.menu .box-container .box h3
+.blogs .box-container .box .image
+{
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+.blogs .box-container .box .image img
+{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;   
+}
+.blogs .box-container .box:hover .image img
+{
+    transform: scale(1.2);
+}
+.blogs .box-container .box .content 
+{
+    padding: 2rem;
+}
+.blogs .box-container .box .content h3
 {
     color: black;
+    object-fit: cover;
+    font-size: 3rem;
+    padding: 1rem 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.blogs .box-container .box .content h3:hover
+{
+    color: white;
     font-size: 3rem;
     padding: 1rem 0;
 }
-.menu .box-container .box .price
+.blogs .box-container .box .content span
 {
-    color: #fff;
-    font-size: 2.5rem;
-    padding: .5rem 0;
+    color: var(--main-color);
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
 }
-.menu .box-container .box .price span
-{
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
-}
-.menu .box-container .box:hover
-{
-    background: #ffcc00;
-}
-
 
 /*--------SECTION CONTACT--------*/
 .contact .row {
@@ -381,24 +307,12 @@ section
     background: var(--black);
     flex-wrap: wrap;
     gap: 1rem;
+    
 }
-
-.contact .row .map {
-    flex: 1 1 45rem;
-    width: 100%;
-    object-fit: cover;
-}
-
 .contact .row form {
     flex: 1 1 45rem;
     padding: 5rem 2rem;
     text-align: center;
-}
-.contact .row form h3
-{
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color: #fff;
 }
 .contact .row form .inputBox {
     display: flex;
@@ -409,7 +323,7 @@ section
     border: var(--border);
 }
 .contact .row form .inputBox span {
-    color: #fff;
+    color: #0074D9;
     font-size: 2rem;
     padding-left: 2rem;
 }
@@ -418,87 +332,96 @@ section
     padding: 2rem;
     font-size: 1.7rem;
     color: #fff;
-    text-transform: none;
     background: none;
 }
 
 
 /*--------SECTION FOOTER--------*/
-footer 
-{
-    background: #CFD8DC; 
+footer {
+    margin-top: -70px;
+        background: #CFD8DC;
+        padding: 0%;
+        text-align: center;
+        color: var(--black);
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+    }
 
-    text-align: center;
-    color: var(--black);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
-}
-footer .share 
-{
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    background-color: #CFD8DC;
-    color: #ffffff;
-}
-footer .share a 
-{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    font-size: 3rem;
-    color: #0074D9; 
-    border:  var(--border);
-    margin: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color( 0.3s, color 0.3s);
-}
-footer .share a:hover {
-    background-color: #1E90FF;
-    color: white;
-    border: var(--borderr);
-    
-}
-footer .links 
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-    gap: 1.5rem;
-    background-color: #CFD8DC; /* Warna abu-abu tua */
-    color: #ffffff;
-}
-footer .links a 
-{
-    padding: 0.5rem 2rem;
-    color: #0074D9; /* Warna teks hitam */
-    border: var(--border);
-    font-size: 2rem;
-    transition: background-color 0.3s, color 0.3s;
-}
-footer .links a:hover 
-{
-    background-color: #1E90FF;
-    color: white;
-    border: var(--borderr);
-}
-footer .credit 
-{
-    font-size: 2rem;
-    background-color: #CFD8DC;/* Warna abu-abu tua */
-    color: #ffffff;
-    color: var(--black); /* Warna teks hitam */
-    font-weight: lighter;
-    padding: 1.5rem 0;
-}
-footer .credit span 
-{
-    color: #1E90FF;
-}
+    .footer .share {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        background-color: #CFD8DC;
+        color: #ffffff;
+    }
+
+    .footer .share a {
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        font-size: 3rem;
+        color: #0074D9;
+        border: var(--border);
+        margin: 0.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color(0.3s, color 0.3s);
+    }
+
+    .footer .share a:hover {
+        background-color: #1E90FF;
+        color: white;
+        border: var(--borderr);
+
+    }
+
+    .footer .links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        background-color: #CFD8DC;
+        /* Warna abu-abu tua */
+        color: #ffffff;
+    }
+
+    .footer .links a {
+        padding: 0.5rem 2rem;
+        color: #0074D9;
+        font-weight: bold; /* Menambahkan tebal pada teks */
+        font-family: 'Times New Roman', Times, serif;
+        border: var(--border);
+        font-size: 2rem;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .footer .links a:hover {
+        background-color: #1E90FF;
+        color: white;
+        border: var(--borderr);
+    }
+
+    .footer .credit {
+        font-size: 2rem;
+        background-color: #CFD8DC;
+        /* Warna abu-abu tua */
+        color: #ffffff;
+        color: var(--black);
+        /* Warna teks hitam */
+        font-weight: lighter;
+        padding: 1.5rem 0;
+        font-family: 'Times New Roman', Times, serif;
+         font-weight: bold; /* Menambahkan tebal pada teks */
+    }
+
+    .footer .credit span {
+        color: #1E90FF;
+        font-weight: bold; /* Menambahkan tebal pada teks */
+    font-family: 'Times New Roman', Times, serif;
+    }
 
 /*--------MEDIA QUERIES--------*/
 @media (max-width:991px) {
