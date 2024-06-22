@@ -13,11 +13,11 @@
         <a href="#home">Home</a>
         <a href="#menu">Pemrograman</a>
         <a href="#menu">Keamanan Teknologi</a>
-        <a href="#product">Seni</a>
-        <a href="#review">Religi</a>
-        <a href="#blogs">Gosip Mahasiswa</a>
-        <a href="#blogs">Profil</a>
-        <a href="#contact">Contact</a>
+        <a href="#menu">Seni</a>
+        <a href="#menu">Religi</a>
+        <a href="#menu">Gosip Mahasiswa</a>
+        <a href="#menu">Profil</a>
+        <a href="#menu">Contact</a>
     </nav>
     <div class="icon ">
         <div class="fas fa-search" id="search-btn"></div>
@@ -129,11 +129,11 @@
         <div class="links">
             <a href="/">Home</a>
             <a href="/">Pemrograman</a>
-            <a href="#menu">Keamanan Teknologi</a>
-            <a href="#product">Seni</a>
-            <a href="#review">Religi</a>
-            <a href="#blogs">Gosip Mahasiswa</a>
-            <a href="#blogs">Profil</a>
+            <a href="/">Keamanan Teknologi</a>
+            <a href="/">Seni</a>
+            <a href="/">Religi</a>
+            <a href="/">Gosip Mahasiswa</a>
+            <a href="/">Profil</a>
         </div>
         <div class="credit">Created By <span>Aryo FF</span></div>
     </footer>
