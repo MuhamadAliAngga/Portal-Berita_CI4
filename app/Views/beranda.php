@@ -31,49 +31,57 @@
 <!--HEADER SECTION END-->
 
 
-<!--HOME SECTION START-->
-<section id="carousel">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="content text-center">
-                        <h1>Pemograman<span>Coding</span></h1>
-                        <p>Tingkatkan Keterampilan Koding Anda Bersama Dunia Koding</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="content text-center">
-                        <h1>Belajar<span>Programming</span></h1>
-                        <p>Mulai dari dasar hingga mahir dengan tutorial lengkap</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="content text-center">
-                        <h1>Komunitas<span>Developer</span></h1>
-                        <p>Bergabung dengan komunitas dan berkembang bersama</p>
-                    </div>
-                </div>
+<!--CAROUSAL START-->
+<section class="carousel">
+<div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        
+        <div class="carousel-item active" data-bs-interval="1000">
+          <div class="overlay-image" style="background-image:url('/image/computer-programming.jpg');"></div>
+            <div class="container">
+              <h1>Tips & Trick Agar Kamu Jago Ngoding Selama 5 Tahun</h1>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    </section>
-<!--HOME SECTION ENDS-->
+
+        <div class="carousel-item" data-bs-interval="500">
+          <div class="overlay-image" style="background-image:url('/image/OIP.jpg');"></div>
+            <div class="container">
+              <h1>Jangan Melakukan 5 Hal Ini jika Kamu Ingin Belajar Ngoding</h1>
+            </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="500">
+          <div class="overlay-image" style="background-image:url('/image/programming-1.jpg');"></div>
+            <div class="container">
+              <h1>5 Ciri-ciri Jika Kamu Ada Bakat Dalam Menjadi Progamer</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
+</section>
+<!--CAROUSAL ENDS-->
+
 
 <!--MENU SECTION STAR-->
 <section class="blogs" id="blogs">
-    <h1 class="heading">CodeIgniter<span> 4</span></h1>
+    <h1 class="heading1">CodeIgniter<span> 4</span></h1>
     <div class="box-container">
     <?php foreach ($artikel_all as $row) : ?>
         <a href="/artikel/detail/<?= $row->id_artikel ?>">
@@ -138,6 +146,7 @@
         <div class="credit">Created By <span>Aryo FF</span></div>
     </footer>
     <!--FOOTER SECTION END-->
+   
     <script>
         let cartItem = document.querySelector('.cart-items-container');
 
@@ -174,9 +183,12 @@
             cartItem.classList.remove('active');
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
